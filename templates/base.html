@@ -46,12 +46,22 @@
         <div id="topnav" class="row bg-dark pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo">
-                    <h2 class="logo-text text-black my-0"><strong>My</strong>Fit</h2>
+                    <h2 class="logo-text white-text my-0"><strong>My<span class="blue-text">Fit</span></strong></h2>
                 </a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="" class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+
+            <div class="container">
+                <form class="searchbar" method="GET" action=""> 
+                    <input type="search" placeholder="Search here" name="search" class="searchbar-input" onkeyup="buttonUp();" required> 
+                    <input type="submit" class="searchbar-submit" value="GO"> 
+                        <span class="searchbar-icon">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </span> 
+                </form>
+            </div>
+            <!-- <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <form method="GET" action="" class="form-inline">
+                    <input class="form-control" type="search" name="q" placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
                             <span class="icon">
@@ -60,7 +70,7 @@
                         </button>
                     </div>
                 </form>
-            </div>
+            </div> -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
@@ -88,9 +98,9 @@
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %} text-black{% endif %} nav-link" href="#" >
                             <div class="text-center">
                                 <div>
-                                    <i class="fas fa-shopping-bag fa-lg"></i>
+                                    <i class="fas fa-shopping-bag fa-lg price"></i>
                                 </div>
-                                <p class="my-0">
+                                <p class="my-0 price">
                                     {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                     {% else %}
@@ -102,6 +112,14 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="row bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark w-100">
+                <a class="navbar-brand" href="#">Navbar w/ text</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
         </div>
     </header>
 
