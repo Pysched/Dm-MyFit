@@ -1,0 +1,78 @@
+html{
+    height:100%;
+}
+
+body{
+    background-color:aquamarine;
+    height: calc(100vh - 164px);
+    color:#555;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Taken from Bulma for fontawesome icons for size and positioning */
+.icon{
+    align-items:center;
+    display:inline-flex;
+    justify-content: center;
+    height:1.5rem;
+    width:1.5rem;
+}
+
+.logo-text {
+    text-transform:uppercase;
+}
+
+.main-logo {
+    width:fit-content;
+}
+
+.main-btn{
+    background:aquamarine;
+    color:red;
+    min-width:260px;
+}
+
+.btn-black{
+    background: black;
+    color:#fff;
+}
+
+.main-btn:hover, .main-btn:active, .main-btn:focus,
+.btn-black:hover, .btn-black:hover, .btn-black:focus {
+    background:#222;
+    color:#fff;
+}
+
+.black-text{
+    color:#000!important;
+}
+
+.border-black{
+    border:1px solid#000!important;
+}
+
+a .nav-item-link{
+    color:#fff!important;
+}
+
+/* ---------- Media Queries ---------- */
+@media (min-width: 1200px) {
+    .container{
+        max-width: 80%;
+    }
+}
+
+/* fixed top navbar on meduin upwards */
+@media (min-width:992px) {
+    .fixed-top-desktop-only{
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        z-index:1020;
+    }
+
+    .header-container{
+        padding-top:164px;
+    }
+}
