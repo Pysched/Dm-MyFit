@@ -44,34 +44,13 @@
   <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-dark pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+            <div class="col-12 col-lg-1 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo">
                     <h2 class="logo-text white-text my-0"><strong>My<span class="blue-text">Fit</span></strong></h2>
                 </a>
             </div>
-
-            <div class="container">
-                <form class="searchbar" method="GET" action=""> 
-                    <input type="search" placeholder="Search here" name="search" class="searchbar-input" onkeyup="buttonUp();" required> 
-                    <input type="submit" class="searchbar-submit" value="GO"> 
-                        <span class="searchbar-icon">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </span> 
-                </form>
-            </div>
-            <!-- <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="" class="form-inline">
-                    <input class="form-control" type="search" name="q" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                            <span class="icon">
-                                <i class="fas fa-search"></i>
-                            </span>
-                        </button>
-                    </div>
-                </form>
-            </div> -->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            {% include 'includes/main-nav.html' %}
+            <div class="col-12 col-lg-5 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -112,15 +91,13 @@
                     </li>
                 </ul>
             </div>
+            <div class="col-12 col-lg-1 my-auto py-0 py-lg-0 text-left">
+                <form method="GET" action="" class="form-inline">
+                    <input type="text" name="q" placeholder="Search.." aria-label="Search" class="form-control">
+                </form>
+            </div>
         </div>
-        <div class="row bg-dark">
-            <nav class="navbar navbar-expand-lg navbar-dark w-100">
-                <a class="navbar-brand" href="#">Navbar w/ text</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </nav>
-        </div>
+        {% include 'includes/mobile-top-header.html' %}
     </header>
 
     {% if messages %}
@@ -139,7 +116,7 @@
 
     {% endblock %}
 
-    
+    {% include 'includes/footer.html' %}
 
     
   </body>
