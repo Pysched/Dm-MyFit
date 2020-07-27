@@ -1,0 +1,104 @@
+[
+    {
+        "pk": 1, 
+        "model": "products.category", 
+        "fields": {
+            "name": "mens_footwear", "friendly_name": "Mens Footwear"
+        }
+    },
+    {
+        "pk": 2, "model": "products.category", 
+        "fields": {
+            "name": "mens_shorts", "friendly_name": "Mens Shorts"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "products.category", 
+        "fields": {
+            "name": "mens_tshirts", "friendly_name": "Mens T-Shirts"
+            }
+    }, 
+    {
+        "pk": 4, "model": "products.category", 
+        "fields": {
+            "name": "mens_jackets", "friendly_name": "Mens Jackets"
+            }
+    }, 
+    {
+        "pk": 5, 
+        "model": "products.category", 
+        "fields": {
+            "name": "womens_footwear", "friendly_name": "Womens Footwear"
+            }
+    }, 
+    {
+        "pk": 6, 
+        "model": "products.category", 
+        "fields": {
+            "name": "womens_shorts", "friendly_name": "Womens Shorts"
+            }
+    }, 
+    {
+        "pk": 7, 
+        "model": "products.category", 
+        "fields": {
+            "name": "womens_tshirts", "friendly_name": "Womens T-Shirts"
+            }
+    }, 
+    {
+        "pk": 8, 
+        "model": "products.category", 
+        "fields": {
+            "name": "womens_jackets", "friendly_name": "Womens Jackets"
+            }
+    }, 
+    {
+        "pk": 9, 
+        "model": "products.category", 
+        "fields": {
+            "name": "nutrition_plans", "friendly_name": "Nutrition Plans"
+            }
+    },
+    {
+        "pk": 10, 
+        "model": "products.category", 
+        "fields": {
+            "name": "training_plans", "friendly_name": "Training Plans"
+            }
+    }, 
+    {
+        "pk": 11, "model": "products.category", 
+        "fields": {
+            "name": "fitness_equipment", "friendly_name": "Fitness Equipment"
+            }
+    }, 
+    {
+        "pk": 12, 
+        "model": "products.category", 
+        "fields": {
+            "name": "gym_accessories", "friendly_name": "Gym Accessories"
+            }
+    }, 
+    {
+        "pk": 13, 
+        "model": "products.category", 
+        "fields": {
+            "name": "gym_equipment", "friendly_name": "Gym Equipment"
+            }
+    }, 
+    {
+        "pk": 14, 
+        "model": "products.category", 
+        "fields": {
+            "name": "sports_nutrition", "friendly_name": "Sports Nutrition"
+            }
+    }, 
+    {
+        "pk": 15, 
+        "model": "products.category", 
+        "fields": {
+            "name": "excercise_routines", "friendly_name": "Excercise Routines"
+            }
+    } 
+]
