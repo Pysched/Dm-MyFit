@@ -14,41 +14,144 @@
 {% block content %}
 <div class="overlay"></div>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col text-left products mt-4 ml-5">
-                <h1 class="black-text ml-2 mt-2 text-left ">All Products</h1>
-            <hr class="line text-left w-25">
+    <h1 class="black-text ml-2 mt-2 text-left ">All Products</h1>
+    <hr class="line text-left w-25">
+ </div>
+    <div class="row col-11 mx-auto ">
+    <hr>
+        <div class="col-lg-3 col-md-5 col-sm-8">
+            <h4>Mens</h4>
+            <hr>
+            <ul class="list-unstyled list-inline inline ">
+                <li>
+                    <a href="{% url 'products' %}?category=mens_footwear" class=" cat-btn list-inline-item border border-2  mr-3">Footwear</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=mens_shorts" class=" cat-btnlist-inline-item  mr-3">Shorts</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=mens_tshirts" class=" cat-btnlist-inline-item  mr-3">T-Shirts</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=mens_jackets" class=" cat-btn list-inline-item ">Jackets & Hoodies</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=mens_footwear,mens_shorts,mens_tshirts,mens_jackets" class=" cat-btnlist-inline-item ">All Products</a>
+                </li>
+            </ul>
         </div>
+        <div class="col-lg-3 col-md-5 col-sm-8">
+            <h4>Womens</h4>
+            <hr>
+            <ul class="list-unstyled list-inline inline ">
+                <li>
+                    <a href="{% url 'products' %}?category=womens_footwear" class=" cat-btn list-inline-item border border-2  mr-3">Footwear</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=womens_shorts" class=" cat-btnlist-inline-item  mr-3">Shorts</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=womens_tshirts" class=" cat-btnlist-inline-item  mr-3">T-Shirts</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=womens_jackets" class=" cat-btnlist-inline-item ">Jackets & Hoodies</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=womens_footwear,womens_shorts,womens_tshirts,womens_jackets" class=" cat-btnlist-inline-item ">All Products</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-8">
+            <h4>Sports Equipment</h4>
+            <hr>
+            <ul class="list-unstyled list-inline inline ">
+                <li>
+                    <a href="{% url 'products' %}?category=fitness_equipment" class=" cat-btn list-inline-item border border-2  mr-3">Fitness Equipment</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=gym_accessories" class=" cat-btnlist-inline-item  mr-3">Gym Accessories</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=gym_equipment" class=" cat-btnlist-inline-item  mr-3">Gym Equipment</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=fitness_equipment,gym_equipment,gym_equipment" class=" cat-btn list-inline-item  mr-3">All Products</a>
+                </li>
+            </ul></div>
+        <div class="col-lg-3 col-md-5 col-sm-8">
+            <h4>Nutrition</h4>
+            <hr>
+            <ul class="list-unstyled list-inline inline ">
+                <li>
+                    <a href="{% url 'products' %}?category=sports_nutrition" class=" cat-btn list-inline-item border border-2  mr-3">Sports Nutrition</a>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="col-lg-3 col-md-5 col-sm-8">
+            <h4>All Products</h4>
+            <hr>
+            <ul class="list-unstyled list-inline inline ">
+                <li>
+                    <a href="{% url 'products' %}?sort=price&direction=asc">By Price</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?sort=rating&direction=desc">By Rating</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=nike">By Brand</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?sort=category&direction=asc">By Category</a>
+                </li>
+                <li>
+                    <a href="{% url 'products' %}?category=mens_footwear,mens_shorts,mens_tshirts,mens_jackets,womens_footwear,womens_shorts,womens_tshirts,womens_jackets,sports_nutrition,fitness_equipment,gym_equipment,gym_equipment">All Products</a>
+                </li>
+            </ul></div>
     </div>
-    <!-- <div class="row bg-dark ml-5 mr-5 py-3 text-center nav justify-content-center"> -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">  
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    
-  </div>
 
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2>Current Categories</h2>
+            {% for c in current_categories %}
+            <a href="{% url 'products' %}?category={{ c.name }}" class="category-badge text-decoration-none">
+                <span class="p-2 mt-2 badge badge-white black-text rounded-0 border border-dark"> {{ c.friendly_name }}</span>
+            </a>
+            {% endfor %}
+        </div>
     </div>
+
+ 
+<div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="row mt-1 mb-2">
+                    <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                        <div class="sort-select-wrapper w-50">
+                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-first">
+                        <p class="text-muted mt-3 text-center text-md-left">
+                            {% if search_term or current_categories or current_sorting != 'None_None' %}
+                                <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                            {% endif %}
+                            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                        </p>
+                    </div>
+                </div>
+
+
+  
    <div class="row mt-5 pt-5">
         <div class="product-container col-10 offset-1 mb-5">
             <div class="row mt-1 mb-2"></div>
@@ -69,12 +172,22 @@
                             {% endif %}
                             <div class="card-body pb-0">
                             <hr>
+                                
                                 {% if product.rating %}
-                                <div class="rating text-right">
-                                    <small class="text-muted text-right mb-1"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                    <div class="rating text-right">
+                                        <small class="text-muted text-right mb-1"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                 {% else %}
                                     <small class="text-muted">No Rating</small>
                                 {% endif %}
+                                    </div>
+                                {% if product.category %}
+                                <div class="rating text-right">
+                                    <a href="{% url 'products' %}?category={{ product.category.name }}"></a>
+                                        <small class="text-muted text-right mb-1"><i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }} </small>
+                                    {% else %}
+                                        <small class="text-muted">No Category</small>
+                                    {% endif %}
+
                                 </div>
                             
                                 <p class="mb-0 ">
@@ -128,6 +241,45 @@
             </div>
         </div>
     </div>
-
+<div class="btt-button shadow-sm rounded-0 border border-black">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>	
+    </div>
 
 {% endblock %}
+
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function(e) {
+        window.scrollTo(0,0)
+    })
+</script>
+
+<script type="text/javascript">
+    $('#sort-selector').change(function() {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if(selectedVal != "reset"){
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
+{% endblock %}
+
+</script>

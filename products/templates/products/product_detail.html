@@ -38,16 +38,34 @@
         <div class="col-12 col-md-6 col-lg-4 mt-5 mb-5 py-4 px-4 border border-3 bg-dark">
             <div class="container-fluid bg-dark">
                 <p class="mb-0 white-text">
+                    
+                    {{ product.name|title }}
+                </p>
+                <p class="mb-0">
+                    {% if product.rating %}
+                        <small class="text-muted white-text">
+                            <i class="fas fa-star mr-1 white-text"></i>
+                            {{ product.rating }} / 5
+                        </small>
+                    {% else %}
+                        <small class="text-muted white-text">No Rating</small>
+                    {% endif %}
+                    </p>
+                    <p class="mt-0">
+                    {% if product.category %}
+                        <small class="text-muted white-text">
+                        <a href="{% url 'products' %}?category={{ product.category.name }}"></a>
+                            <i class="fas fa-tag mr-1 white-text"></i>
+                            {{ product.category.friendly_name|title }} 
+                        </small>
+                   
+                    {% endif %}
+                    </p>
+                <p class="mb-0 white-text">
                     <span class="font-weight-bold white-text">
                     Product Sku:
                     </span>
                     {{ product.sku|title }}
-                </p>
-                <p class="mb-0 white-text">
-                    <span class="font-weight-bold white-text">
-                    Product Name:
-                    </span>
-                    {{ product.name|title }}
                 </p>
                 <p class="mb-0 white-text">
                     <span class="font-weight-bold white-text">
@@ -72,14 +90,6 @@
                 <p class="lead mb-0 text-left font-weight-bold white-text mt-4">
                     ${{ product.price }}
                 </p>
-                    {% if product.rating %}
-                        <small class="text-muted white-text">
-                            <i class="fas fa-star mr-1 white-text"></i>
-                            {{ product.rating }} / 5
-                        </small>
-                    {% else %}
-                        <small class="text-muted white-text">No Rating</small>
-                    {% endif %}
             </div>
     </div>
 </div>

@@ -15,6 +15,11 @@ body{
     margin-top:164px;
 }
 
+.banner{
+    background-image:url('https://github.com/Pysched/Dm-MyFit/blob/9cf6b1a522f4779b5baa9aff67e763f51436656e/media/banner3.jpg')no-repeat center center fixed;
+    background-size:cover;
+}
+
 /* Taken from Bulma for fontawesome icons for size and positioning */
 .icon{
     align-items:center;
@@ -22,6 +27,19 @@ body{
     justify-content: center;
     height:1.5rem;
     width:1.5rem;
+}
+
+.inline li{
+    display:inline-block;
+    color:#fff;
+    
+}
+
+.cat-btn a{
+    border:2px solid #343a40;
+    background-color: aqua;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 .logo-text {
@@ -147,12 +165,12 @@ a .nav-item-link{
 .dropdown-menu{
     margin-top:7px;
     border-radius:0;
-    background-color:#343a40;
+    background-color:#fff;
 }
 
 
 .dropdown-item:focus{
-    color:#fff;
+    color:#343a40;
     background-color:none;
 }
 .dropdown-item:hover{
@@ -161,7 +179,26 @@ a .nav-item-link{
 
 .header-container{
         padding-top:88px;
-    }
+}
+
+a.category-basge > span.basge:hover {
+    background:#212529!important;
+    color:#fff!important;
+}
+
+.btt-link{
+    cursor:pointer;
+}
+
+.btt-button{
+    height:40px;
+    width:40px;
+    position:fixed;
+    bottom:10px;
+    right:125px;
+}
+
+
 
 /* ---------- Media Queries ---------- */
 @media (min-width: 1200px) {
