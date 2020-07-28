@@ -159,6 +159,10 @@ a .nav-item-link{
     background-color:none;
 }
 
+.header-container{
+        padding-top:88px;
+    }
+
 /* ---------- Media Queries ---------- */
 @media (min-width: 1200px) {
     .container{
@@ -168,45 +172,57 @@ a .nav-item-link{
 
 /* fixed top navbar on meduin upwards */
 @media (min-width:992px) {
-    .fixed-top-desktop-only{
+    .fixed-top-desktop-only
+        {
         position:fixed;
         top:0;
         left:0;
         right:0;
-        z-index:1020;}
-        .search-box{
+        z-index:1020;
+        }
+    .search-box{
         margin-left:auto;
         margin-right:auto;
     }
-    }
 
     .header-container{
-        padding-top:164px;
+        padding-top:128px;
     }
 }
 
-
-
-/* -- overlay -- */
-.overlay{
-    height:100%;
-    background-color:#fff;
-    z-index:99999;
+/* -- HR lines -- */
+.line{
+    border-bottom:2px solid #343a40 !important;
+    margin-left:0;
+    text-align:left;
 }
-
-
 
 /* ----- Footer CSS ----- */
 footer{
     width:100%;
     height:75px;
     bottom:0;
+    position:absolute;
 }
-
-
 
 /* -- Section 1 --*/ 
 .section-1{
     width:100%;
     height:auto;
 }
+
+/* --------- Products page css --------- */
+.overlay{
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    position:fixed;
+    background:#fff;
+    z-index:-1;
+}
+
+.products{
+
+}
+

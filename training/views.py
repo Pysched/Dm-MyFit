@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 
-
 def training(request):
-    """ A view to return the index page """
-    return render(request, 'training/base.html')
+    """ A view to return the training page """
+    return render(request, 'training/training.html')

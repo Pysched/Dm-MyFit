@@ -42,62 +42,8 @@
     <title>MyFit{% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top mx-0 px-0">
-        <!-- <div id="topnav" class="row bg-dark pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-1 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo">
-                    <h2 class="logo-text white-text my-0"><strong>My<span class="blue-text">Fit</span></strong></h2>
-                </a>
-            </div> -->
-            <!-- {% include 'includes/main-nav.html' %}
-            <div class="col-12 col-lg-5 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0"> -->
-                    <!-- <li class="list-inline-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i>
-                                    <p class="my-0 nav-item-link">My Account</p>    
-                                </div>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <a class="dropdown-item" href="#">My Profile</a>
-                                <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
-                            {% else %}
-                                <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
-                                <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %} text-black{% endif %} nav-link" href="#" >
-                            <div class="text-center">
-                                <div>
-                                    <i class="fas fa-shopping-bag fa-lg price"></i>
-                                </div>
-                                <p class="my-0 price">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        €0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li> -->
-                <!-- </ul>
-            </div>
-           <div class="col-12 col-lg-1 my-auto py-0 py-lg-0 text-left">
-                <form method="GET" action="" class="form-inline">
-                    <input type="text" name="q" placeholder="Search.." aria-label="Search" class="form-control">
-                </form>
-            </div> 
-        </div> -->
-        <!-- {% include 'includes/mobile-top-header.html' %} -->
+    <header class="container-fluid fixed-top mx-0 px-0"> 
+        {% include 'includes/main-nav.html' %}
     </header>
 
     {% if messages %}
