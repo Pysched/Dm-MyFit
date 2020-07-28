@@ -27,7 +27,10 @@
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <p class="nav-item ">Account</p>    
+            <div class="text-center">
+            <div><i class="fas fa-user fa-lg"></i></div>
+                <p class="nav-item ">Account</p>
+                </div>    
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% if request.user.is_authenticated %}
@@ -44,6 +47,8 @@
             </li>
             <li class="nav-item">
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %} text-black{% endif %} nav-link" href="{% url 'view_bag' %}" >
+                <div class="text-center">
+                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
                     <p class="nav-item">
                         {% if grand_total %}
                             ${{ grand_total|floatformat:2 }}
@@ -51,6 +56,7 @@
                             €0.00
                         {% endif %}
                     </p>
+                </div>
                 </a>
             </li>
         </ul>
