@@ -37,7 +37,10 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+                                    <p class="mb-0"><span class="font-weight-bold"> Product Name:</span> {{ product.name|title }}</p>
+                                    <p class="mb-0"><span class="font-weight-bold"> Product Brand:</span>  {{ product.brand|title }}</p>
+                                    <p class="mb-0"><span class="font-weight-bold"> Product Description:</span> {{ product.description }}</p>
+                                    <p class="mb-0"><span class="font-weight-bold"> Product Recommendation:</span> {{ product.recommeded_for }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
