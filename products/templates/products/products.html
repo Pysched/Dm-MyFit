@@ -20,74 +20,64 @@
             <hr class="line text-left w-25">
         </div>
     </div>
-    <div class="row">
-        <div class="product-container col-10 offset-1">
-            <div class="row mt-1 mb-2">
-    </div>
-        <div class="row">
-            {% for product in products %}
-                <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-                    <div class="card">
-                    {% if product.image %}
-                        <a href="">
-                            <img class="card-img" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                    {% else %}
-                        <a href="">
-                            <img src="{{ MEDIA_URL}}noimage.png" alt="{{ product.name }}">
-                        </a>
-                    {% endif %}
-                    <div class="card-img-overlay d-flex justify-content-end">
-                    <a href="#" class="card-link text-danger like">
-                        <i class="fas fa-heart"></i>
-                    </a>
-                    </div>
-                    <div class="card-body">
-                    <h4 class="card-title">{{ product.name }}</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ product.brand }}</h6>
-                    <p class="card-text">
-                        {{ product.description }}
-                    </p>
-                    <div class="options d-flex flex-fill">
-                        <select class="custom-select mr-1">
-                            <option selected>Color</option>
-                            <option value="1">Green</option>
-                            <option value="2">Blue</option>
-                            <option value="3">Red</option>
-                        </select>
-                        <select class="custom-select ml-1">
-                            <option selected>Size</option>
-                            <option value="1">41</option>
-                            <option value="2">42</option>
-                            <option value="3">43</option>
-                        </select>
-                    </div>
-                    <div class="buy d-flex justify-content-between align-items-center">
-                        <div class="price text-success">
-                            <h5 class="mt-4">{{ product.price }}</h5>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                            <p class="text-left mb-0 font-weight-bold">
-                                {% if product.rating %}
-                                    <small class="text-muted">
-                                    <i class="fas fa-star mr-1"></i>
-                                    {{ product.rating }} / 5</small>
+   <div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card h-100 border-0">
+                                {% if product.image %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
                                 {% else %}
-                                    <small class="text-muted">No Rating</small>
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                </a>
                                 {% endif %}
-                                
-                            </p>
-
+                                <div class="card-body pb-0">
+                                    <p class="mb-0">{{ product.name }}</p>
+                                </div>
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            {% if product.rating %}
+                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                            {% else %}
+                                                <small class="text-muted">No Rating</small>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-
-                        <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-            
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}                        
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-xl-block mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
-</div>
-{% endfor %}
+
+
 {% endblock %}
