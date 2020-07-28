@@ -198,6 +198,16 @@ a.category-basge > span.basge:hover {
     right:125px;
 }
 
+.btn-outline-black{
+    background:#fff;
+    color:black!important;
+    border:1px solid black;
+}
+
+.icon{
+    color:#000;
+}
+
 
 
 /* ---------- Media Queries ---------- */

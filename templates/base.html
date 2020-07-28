@@ -44,6 +44,12 @@
   <body>
     <header class="container-fluid fixed-top mx-0 px-0"> 
         {% include 'includes/main-nav.html' %}
+
+        <div class="container delivery">
+            <div class="row">
+                <h4>Free delivery on all order over ${{ free_delivery_threshold }}</h4>
+            </div>
+        </div>
     </header>
 
     {% if messages %}
