@@ -54,7 +54,7 @@
                 </a>
             </li>
         </ul>
-        <form class="form-inline search text-center">
+        <form class="form-inline search text-center" method="GET" action="{% url 'products' %}">
             <div class="search-box text-center">
                 <input class="form-control rounded-0 border border-blue" type="search" name="q" placeholder="Search..." aria-label="Search">
                 <button class="btn btn-outline-primary blue rounded-0 border border-blue" type="submit">

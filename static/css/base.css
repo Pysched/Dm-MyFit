@@ -196,6 +196,37 @@ a .nav-item-link{
     margin-left:0;
     text-align:left;
 }
+.product-line{
+    background-color: #343a40 !important;
+    
+}
+
+/* ----- Card-body CSS ----- */
+.card-body{
+    padding-top:0;
+}
+
+.inner{
+    overflow: hidden;
+}
+
+img{
+    transform:scale(.8);
+}
+ 
+.inner img{
+    transition: all 1.0s ease;
+}
+ 
+.inner:hover img{
+    transform: scale(1);
+}
+
+.rating{
+    margin-right:5px;
+    margin-left:auto;
+}
+
 
 /* ----- Training-Overlay CSS ----- */
 .training-overlay-success{
