@@ -9,9 +9,9 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto ml-5 mt-3 text-center">
+        <ul class="navbar-nav mr-auto ml-5 mt-4 text-center">
             <li class="nav-item active ">
-                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'home' %}">Home </a>
             </li>
         <li class="nav-item">
             <a class="nav-link" href="{% url 'training' %}">Training</a>
@@ -60,6 +60,15 @@
                 </a>
             </li>
         </ul>
+    <div class="search mr-5 text-center">
+    <ul class="navbar-nav mr-auto  mt-4 align-right">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Register</a>
+        </li>
+        
         <form class="form-inline search text-center" method="GET" action="{% url 'products' %}">
             <div class="search-box text-center">
                 <input class="form-control rounded-0 border border-blue" type="search" name="q" placeholder="Search..." aria-label="Search">
@@ -70,6 +79,8 @@
                 </button>
             </div>
         </form>
+        </ul ">
+    </div>
   </div>
 </nav>
 

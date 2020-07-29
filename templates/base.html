@@ -45,10 +45,12 @@
     <header class="container-fluid fixed-top mx-0 px-0"> 
         {% include 'includes/main-nav.html' %}
 
-        <div class="container delivery">
-            <div class="row">
-                <h4>Free delivery on all order over ${{ free_delivery_threshold }}</h4>
-            </div>
+        <div class="container-fluid delivery  text-center py-2">
+           <div id="delivery-banner" class="row text-center">
+            <div class="col bg-black text-white">
+                <h5 class="logo-font my-1 text-uppercase">Free delivery on orders over ${{ free_delivery_threshold }}!</h5>                
+            </div>            
+        </div>
         </div>
     </header>
 

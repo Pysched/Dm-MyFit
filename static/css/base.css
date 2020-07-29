@@ -181,7 +181,7 @@ a .nav-item-link{
         padding-top:88px;
 }
 
-a.category-basge > span.basge:hover {
+a.category-badge > span.badge:hover {
     background:#212529!important;
     color:#fff!important;
 }
@@ -206,6 +206,11 @@ a.category-basge > span.basge:hover {
 
 .icon{
     color:#000;
+}
+
+.delivery{
+    background:rgb(12, 130, 241);
+    color:#fff;
 }
 
 
