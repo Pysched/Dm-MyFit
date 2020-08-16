@@ -322,3 +322,10 @@ footer{
 
 }
 
+
+.login-container{
+    margin-top:175px;
+    padding:1.5rem;
+    margin-bottom:55px;
+    height:100vh;
+}
