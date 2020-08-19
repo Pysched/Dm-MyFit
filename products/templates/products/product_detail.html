@@ -13,16 +13,16 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container-fluid">
+<div class="container-fluid mt-5">
  <div class="row">
         <div class="col text-left products mt-4 ml-5">
-                <h1 class="black-text ml-2 mt-2 text-center ">Product Details</h1>
+                <h1 class="black-text ml-2 mt-2  ">Product Details</h1>
             <hr class="line text-center w-100">
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-            <div class="image-container my-5 border border-3">
+            <div class="image-container my-5 ">
             {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
                     <img class="card-img-top  w-auto img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -96,8 +96,9 @@
                 <div class="form-row">
                 {% with product.has_sizes as s %}
                 {% if s %}
+                <hr class="pd-line">
                 <div class="col-12">
-                    <p><strong>Size:</strong></p>
+                    <p><strong class="white-text">Size:</strong></p>
                     <select name="product_size" id="id_product_size" class="form-control rounded-0 w-50">
                         <option value="xs">XS</option>
                         <option value="s">S</option>

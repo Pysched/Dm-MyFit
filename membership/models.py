@@ -14,11 +14,11 @@ MEMBERSHIP_CHOICES = (
 class Membership(models.Model):
     slug = models.SlugField(
         null=True, blank=True)
-    membership_type = models.Charfield(
-        chocies=MEMBERSHIP_CHOICES, default='Silver',
+    membership_type = models.CharField(
+        choices=MEMBERSHIP_CHOICES, default='Silver',
         max_length=30
     )
-    price = models.DecimalField(default=0)
+    price = models.DecimalField(default=0, max_digits=5, decimal_places=2)
 
 
 def __str__(self):

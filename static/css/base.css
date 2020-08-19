@@ -250,7 +250,10 @@ a.category-badge > span.badge:hover {
 }
 .product-line{
     background-color: #343a40 !important;
-    
+}
+
+.pd-line{
+    background-color:#fff;
 }
 
 /* ----- Card-body CSS ----- */
@@ -328,4 +331,9 @@ footer{
     padding:1.5rem;
     margin-bottom:55px;
     height:100vh;
+}
+
+/* --------- Product Details page css --------- */
+.product-details{
+    margin-top:10em;
 }

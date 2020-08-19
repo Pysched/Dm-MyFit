@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'nutrition',
     'blog',
     'bag',
+    'membership',
 ]
 
 MIDDLEWARE = [
