@@ -186,7 +186,7 @@ a.category-badge > span.badge:hover {
     color:#fff!important;
 }
 
-.btt-link{
+.btt-link, a.update-link, a.remove-item {
     cursor:pointer;
 }
 
