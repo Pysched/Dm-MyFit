@@ -11,7 +11,7 @@ def view_bag(request):
 
 def add_to_bag(request, item_id):
     """ Adding items to the bag, quantity management toast messages """
-    product = Product.objects.get(pl=item_id)
+    product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     size = None
