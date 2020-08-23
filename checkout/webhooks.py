@@ -1,8 +1,8 @@
 from django.conf import settings
 from django.http import HttpResponse
-from checkout.webhook_handler import StripeWH_Handler
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
+from checkout.webhook_handler import StripeWH_Handler
 
 import stripe
 
@@ -10,6 +10,7 @@ import stripe
 @require_POST
 @csrf_exempt
 def webhook(request):
+    # Setup
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -30,5 +31,22 @@ def webhook(request):
     except Exception as e:
         return HttpResponse(content=e, status=400)
 
-    print('Success!')
-    return HttpResponse(status=200)
+    # Set up a webhook handler
+    handler = StripeWH_Handler(request)
+
+    # Map webhook events to relevant handler funcitons
+    event_map = {
+        'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
+        'payment_intent.payment_failed': handler.handle_payment_intent_failed,
+    }
+
+    # Get the webhook type from Strip
+    event_type = event['type']
+
+    # If there's a handler for it, get ot from the event map, use generic as
+    # default
+    event_handler = event_map.get(event_type, handler.handle_event)
+    # Call the event hadnler
+    response = event_handler(event)
+
+    return response
