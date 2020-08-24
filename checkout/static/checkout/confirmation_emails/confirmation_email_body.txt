@@ -1,0 +1,22 @@
+Hello {{ order.full_name}}
+
+This is a confirmation of your order at MyFit. Your order information is below.
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: ${{ order.delivery_cost }}
+Delivery: ${{ order.delivery_cost }}
+Grand Total: {{ order.grand_total }}
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country}}.
+
+Your contact details, should we need to contact you are: {{ order.phone_number }}.
+
+If you have any questions or queries, please feel free toc ontact us at {{ contact_email }}
+
+Thank you for shopping with us!
+
+Looking forward to working with you again,
+
+MyFit Team
