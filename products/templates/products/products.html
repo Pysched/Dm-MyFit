@@ -166,7 +166,7 @@
                                 </a>
                                 </div>
                             {% else %}
-                                <a href="">
+                                <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
                             {% endif %}
@@ -206,11 +206,12 @@
                                 <div class="row">
                                     <div class="col">
                                         <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                                        <!-- {% if product.rating %}
-                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                        {% else %}
-                                            <small class="text-muted">No Rating</small>
-                                        {% endif %} -->
+                                       {% if request.user.is_superuser %}
+                                        <small class="ml-3">
+                                                <a href="{% url 'edit_product' product.id %}">Edit</a>
+                                                <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
+                                        </small>
+                                       {% endif %}
                                     </div>
                                 </div>
                             </div>
