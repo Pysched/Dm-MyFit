@@ -9,7 +9,7 @@ class Course(models.Model):
     slug = models.SlugField()
     title = models.CharField(max_length=120)
     descriptions = models.TextField()
-    allow_memberships = models.ManyToManyField(Membership)
+    allowed_memberships = models.ManyToManyField(Membership)
 
     def __str__(self):
         return self.title
