@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.db.models import Q
+from django.db.models import Q, Avg
 from django.db.models.functions import Lower
 
 from django.contrib.auth.decorators import login_required
+from .models import Product, Category, Comment
+from .forms import ProductForm, CommentForm
 
-from .models import Product, Category
-from .forms import ProductForm
-
+import math
 # Create your views here.
 
 
@@ -43,10 +43,13 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                        request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(
+                    name__icontains=query) | Q(
+                            description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -65,9 +68,14 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    comment_form = CommentForm()
+    comments = Comment.objects.filter(
+            product_id=product_id).order_by('-create_at')
 
     context = {
         'product': product,
+        'comment_form': comment_form,
+        'comments': comments,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -77,7 +85,8 @@ def product_detail(request, product_id):
 def add_product(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'You do not have authorisation to perform that action')
+        messages.error(
+                request, 'You dont have authorisation to perform that action')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -87,7 +96,8 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('add_product'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                    request, 'Error. Please ensure the form is valid.')
     else:
         form = ProductForm()
 
@@ -103,7 +113,8 @@ def add_product(request):
 def edit_product(request, product_id):
     """Edit a product in the store"""
     if not request.user.is_superuser:
-        messages.error(request, 'You do not have authorisation to perform that action')
+        messages.error(
+                request, 'You dont have authorisation to perform that action')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -114,7 +125,8 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product, please ensure the correct details have been entered')
+            messages.error(
+                    request, 'Failed to update product please recheck details')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -132,10 +144,30 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
     """ Delete a product from the store"""
     if not request.user.is_superuser:
-        messages.error(request, 'You do not have authorisation to perform that action')
+        messages.error(
+                request, 'You do not have authorisation for that action')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product Deleted')
     return redirect(reverse('products'))
+
+
+def add_comment(request, product_id):
+    """ Saves entered form and redirects to selected product"""
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.product = product
+            comment.user = request.user
+            comment.save()
+            messages.info(request, "Your comment has beena added!")
+            return redirect(reverse('product_detail', args=[product_id]))
+        else:
+            print(comment_form.errors)
+
+    return redirect(reverse('product_detail', args=[product_id]))

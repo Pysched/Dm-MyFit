@@ -39,30 +39,29 @@ def get_selected_membership(request):
 class MembershipView(ListView):
     model = Membership
 
-    def get_content_data(self, *args, **kwargs):
-        context = super().get_content_data(**kwargs)
-        current_membership = self.get_user_membership(self.request)
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        current_membership = get_user_membership(self.request)
         context['current_membership'] = str(current_membership.membership)
         return context
 
     def post(self, request, **kwargs):
-        selected_membership = request.POST.get('membership_type')
         user_membership = get_user_membership(request)
         user_subscription = get_user_subscription(request)
+        selected_membership_type = request.POST.get('membership_type')
 
-        select_membership_qs = Membership.objects.filter(
-            membership_type=selected_membership
-        )
-        if select_membership_qs.exists():
-            selected_membership = select_membership_qs.first()
+        selected_membership = Membership.objects.get(
+            membership_type=selected_membership_type)
 
         if user_membership.membership == selected_membership:
             if user_subscription is not None:
-                messages.info(
-                        request, "This is your current membership")
-            return HttpResponseRedirect(request.meta.get('HTTP_REFERER'))
+                messages.info(request, """You already have this membership. Your
+                              next payment is due {}""".format(
+                                  'get this value from stripe'))
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-        request.session['selected_mebership_type'] = selected_membership.membership_type
+        # assign to the session
+        request.session['selected_membership_type'] = selected_membership.membership_type
 
         return HttpResponseRedirect(reverse('membership:payment'))
 

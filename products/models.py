@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import Avg
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -36,5 +38,33 @@ class Product(models.Model):
     image = models.ImageField(
         null=True, blank=True)
 
+    def averagereview(self):
+        ratings = Comment.objects.filter(
+                product=self).aggregate(average=Avg('rate'))
+        avg = 0
+        if ratings["average"] is not None:
+            avg = float(ratings["average"])
+        return avg
+
     def __str__(self):
         return self.name
+
+
+class Comment(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    subject = models.CharField(max_length=250, blank=True, null=False)
+    comment = models.CharField(max_length=250, blank=True)
+    Rating = (
+        (0, 'No Rating'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    )
+    rate = models.IntegerField(choices=Rating, default=0)
+    create_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.subject

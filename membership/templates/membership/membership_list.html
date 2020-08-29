@@ -16,6 +16,7 @@
 <div class="container mt-5">
     <h1>Select a membership</h1>
 	<div class="row">
+    {% csrf_token %}
 		{% for object in object_list %}
 		<div class="col-sm-4 col-md-4">
 			<h2>{{ object.membership_type }}</h2>
