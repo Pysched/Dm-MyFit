@@ -6,7 +6,7 @@ from membership.models import Membership, UserMembership, Subscription
 
 class MembershipView(ListView):
     model = Membership
-    template_name = 'memberships/list.html'
+    template_name = 'membership/list.html'
 
 
 def get_user_membership(self):

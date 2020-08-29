@@ -54,6 +54,7 @@
                                     </a>
                                 </td>
                                 <td>{{ order.date }}</td>
+                                <td>{{ order.full_name }}</td>
                                 <td>
                                     <ul class="list-unstyled">
                                         {% for item in order.lineitems.all %}
