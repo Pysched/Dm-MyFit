@@ -1,9 +1,9 @@
 from django.urls import path, include
-from . import views
+from .views import MembershipView
 
 
 app_name = 'membership'
 
 urlpatterns = [
-    path('membership/', views.MembershipView.as_view(), name='select'),
+    path('', MembershipView.as_view(), name='select'),
 ]
