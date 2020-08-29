@@ -165,7 +165,7 @@ def add_comment(request, product_id):
             comment.product = product
             comment.user = request.user
             comment.save()
-            messages.info(request, "Your comment has beena added!")
+            messages.info(request, "Your comment has been added!")
             return redirect(reverse('product_detail', args=[product_id]))
         else:
             print(comment_form.errors)
