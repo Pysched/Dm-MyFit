@@ -24,18 +24,15 @@ urlpatterns = [
     path('', include('home.urls')),
     path('training/', include('training.urls')),
     path('products/', include('products.urls')),
-    path('nutrition/', include('nutrition.urls')),
+  
     path('blog/', include('blog.urls')),
     path('bag/', include('bag.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
-<<<<<<< HEAD
+
     path('contact/', include('contact.urls')),
-=======
+
     path('courses/', include('courses.urls', namespace='courses')),
     path('membership/', include('membership.urls', namespace='memberships')),
-<<<<<<< HEAD
->>>>>>> parent of a8b57e7... create contact us app, setup of models, urls, views and html, reworked requirements as alot ad not taken affect
-=======
->>>>>>> parent of 139ae00... edited templates for allauth as styling has broken for some unknow reason
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
