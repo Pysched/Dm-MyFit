@@ -189,10 +189,10 @@ a .nav-item-link{
 
 /* -- Bootstrap override -- */
 /* -- Search bar -- */
-.form-control{
+/* .form-control{
     border-radius:0!important;
-    border:0!important;
-}
+    border:2px solid #343a40!important;
+} */
 
 .blue{
     background-color:rgb(12, 130, 241);
