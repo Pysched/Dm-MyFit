@@ -14,10 +14,11 @@
 {% block content %}
 <div class="overlay"></div>
 <div class="container-fluid mt-5">
- <div class="row">
-        <div class="col text-left products mt-4 ml-5">
-                <h1 class="black-text ml-2 mt-2  ">Product Details</h1>
-            <hr class="line text-center w-100">
+ <div class="row ">
+        <div class="col text-center mt-3">
+            <hr class="w-75 text-secondary">
+            <h2>Products Details</h2>
+            <hr class="w-75 ">
         </div>
     </div>
     <div class="row">
@@ -99,7 +100,7 @@
                 <hr class="pd-line">
                 <div class="col-12">
                     <p><strong class="white-text">Size:</strong></p>
-                    <select name="product_size" id="id_product_size" class="form-control rounded-0 w-50">
+                    <select name="product_size" id="id_product_size" class="select form-control rounded-0 w-50">
                         <option value="xs">XS</option>
                         <option value="s">S</option>
                         <option value="m">M</option>
@@ -109,14 +110,14 @@
                 </div>
                 {% endif %}
                      <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
+                                <p class="mt-3"><strong class="text-white">Quantity:</strong></p>
                                 <div class="form-group w-50">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-black rounded-0" 
                                                 data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
                                                 <span class="icon">
-                                                    <i class="fas fa-minus"></i>
+                                                    <i class="fas fa-minus text-white"></i>
                                                 </span>
                                             </button>
                                         </div>
@@ -128,7 +129,7 @@
                                             <button class="increment-qty btn btn-black rounded-0"
                                                 data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
                                                 <span class="icon">
-                                                    <i class="fas fa-plus"></i>
+                                                    <i class="fas fa-plus text-white"></i>
                                                 </span>
                                             </button>
                                         </div>
@@ -148,8 +149,9 @@
                     {% endwith %}
                 </div>
                 {% if request.user.is_superuser %}
+                .
                     <small class="ml-3">
-                        <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                        <a href="{% url 'edit_product' product.id %}" class="">Edit</a> |
                         <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete</a>
                     </small>
                 {% endif %}
@@ -158,15 +160,15 @@
     </div>
 </div>
 
-    <section class="container-fluid">
+    <div class="container-fluid">
         <div class="row mt-5">
             <div class="col col-lg-8 offset-lg-2">
                 <h4 class="text-uppercase">Comments</h4>
-                <hr class="hr-bag">
+                <hr>
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 offset-lg-2 all-comment mb-4">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 offset-lg-2 all-comment mb-4 mr-5">
                 {% if comments %}
                     {% for comment in comments %}
                         <div class="single-comment mb-3">
@@ -192,23 +194,23 @@
                     <p>Be the first one to leave a review!</p>
                 {% endif %}
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 form-bg p-3">
-                <h5 class="text-uppercase">Write a review</h5>
-                <form action="{% url 'add_comment' product.id %}" method="POST" class="form-group review-form">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-5 form p-3  text-white py-2">
+                <h5 class="text-uppercase text-white">Leave a comment</h5>
+                <form action="{% url 'add_comment' product.id %}" method="POST" class="form-group mt-3 comment-form">
                     {% csrf_token %}
                     {{ comment_form|crispy }}
                     {% if user.is_authenticated %}
                         <button id="submit-button" class="btn btn-black rounded-0 mt-3">
-                            <span class="text-uppercase">Add review</span>
+                            <span class="text-uppercase text-white">Add review</span>
                         </button>
                     {% else %}
-                        <p>You must be logged in to add reviews! <a href="{% url 'account_login' %}">Login</a>
+                        <p class="mt-3">You must be logged in to add reviews! <a href="{% url 'account_login' %}">Login</a>
                          or <a href="{% url 'account_signup' %}">Register</a></p>
                     {% endif %}
                 </form>
             </div>
         </div>
-    </section>
+    </div>
 
 {% endblock %}
 

@@ -4,7 +4,7 @@
 {% block page_header %}
 <div class="container header-container mt-5">
     <div class="row">
-    <h2 class="text-left text-uppercase font-weight-bold ml-3 mt-3">
+    <h2 class="text-left text-uppercase  ml-3 mt-5">
         Membership Payment
     </h2>
     </div>
@@ -14,13 +14,16 @@
 {% block content %}
 <div class="overlay"></div>
 <div class="container mt-5">
-	<div class="row">
-    <h3>Payment</h3>
+	<div class="row  ">
+   
+    <h3 class="mt-5">Payment</h3><br><br>
+    </div>
         <div class="col-sm-4 col-md-4">
             <p>Selected Membership: {{ selected_membership }}</p>
+            <p>Price: <strong>${{ selected_membership.price }}</strong>per year</p>
         </div>
     </div>
-</div>
+
 
 
 {% endblock %}

@@ -72,7 +72,7 @@ def PaymentView(request):
         selected_membership = get_selected_membership(request)
     except Exception as e:
         return redirect(reverse("memberships:select"))
-    publishKey = settings.STRIPE_PUBLISHABLE_KEY
+    publishKey = settings.STRIPE_PUBLIC_KEY
     if request.method == "POST":
         try:
             token = request.POST['stripeToken']

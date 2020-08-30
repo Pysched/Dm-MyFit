@@ -28,9 +28,9 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         widegts = {
-            'comment': Textarea(attrs={'cols': 7,  'rows': 7}),
+            'comment': Textarea(attrs={'cols': 15,  'rows': 15}),
         }
         fields = ['subject', 'comment', 'rate']
         labels = {
-            'rate': 'Choose your rating'
+            'rate': 'Rate the Product'
         }

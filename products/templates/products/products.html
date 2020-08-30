@@ -26,50 +26,6 @@
         </div>
     </div>
 
-    <!-- <div class="row">
-        <div class="col text-center">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a href="{% url 'products' %}?category=mens_footwear,mens_shorts,mens_tshirts,mens_jackets,womens_footwear,womens_shorts,womens_tshirts,womens_jackets,sports_nutrition,fitness_equipment,gym_equipment,gym_accessories" class="p-3 mt-3 ml-2 badge border rounded-0" >All Products</a>
-                </li>
-                <li class="nav-item">
-
-                    <a href="{% url 'products' %}?category=mens_footwear,mens_shorts,mens_tshirts,mens_jackets" class="category-badge text-decoration-none" > 
-
-                    <span class="{% if request.get_full_path == '/products/?category=mens_footwear,mens_shorts,mens_tshirts,mens_jackets' %}active{% endif %} p-3 mt-3 ml-2 badge border rounded-0" > Mens </span> 
-
-                  </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'products' %}?category=womens_footwear,womens_shorts,womens_tshirts,womens_jackets" class="category-badge text-decoration-none" >
-                    
-                    <span class="{% if request.get_full_path == '/products/?category=womens_footwear,womens_shorts,womens_tshirts,womens_jackets' %}active{% endif %} p-3 mt-3 ml-2 badge border rounded-0"> Womens </span>
-
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'products' %}?category=fitness_equipment,gym_accessories,gym_equipment" class="category-badge text-decoration-none" >
-
-                    <span class="{% if request.get_full_path == '/products/?category=fitness_equipment,gym_accessories,gym_equipment' %}active{% endif %} p-3 mt-3 ml-2 badge border rounded-0" > Gym Equipment </span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'products' %}?category=sports_nutrition" class="category-badge text-decoration-none"> 
-                    
-                    <span class="{% if request.get_full_path == '/products/?category=sports_nutrition' %}active{% endif %} p-3 mt-3 ml-2 badge border rounded-0"> Nutrition </span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div> -->
-    
-       
-
-            
-        
     <!-- Mens Product Categories -->
     <div class="row ">
         <div class="col text-center mt-3 cat-sub"  id="m">
@@ -156,19 +112,16 @@
 
     <!-- Nutrition Product Categories -->
     <div class="row n" id="n">
-    <div class="col text-center mt-3">
-        <a href="{% url 'products' %}?category=sports_nutrition" class="category-badge text-decoration-none">
-            <span class="{% if request.get_full_path == '/products/?category=sports_nutrition' %}active{% endif %}
-            p-3 mt-3 badge border rounded-0">Sports Nutrition</span>
-        </a>
+        <div class="col text-center mt-3">
+            <a href="{% url 'products' %}?category=sports_nutrition" class="category-badge text-decoration-none">
+                <span class="{% if request.get_full_path == '/products/?category=sports_nutrition' %}active{% endif %}
+                p-3 mt-3 badge border rounded-0">Sports Nutrition</span>
+            </a>
+        </div>
     </div>
 
-
-    
-
-
-<!-- Filter options -->
-<div class="row">
+    <!-- Filter options -->
+    <div class="row">
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2 p-0">
                 <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end" id="filter">
@@ -197,10 +150,7 @@
                 </div>
             </div>
         </div>
-
-
-
-
+<!-- Product details -->
 <div class="row mt-3 pt-3">
     <div class="product-container col-10 offset-1 mb-5">
         <div class="row mt-1 mb-2"></div>
@@ -266,6 +216,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Postioning technique from Code Institute learnings -->
                 {% if forloop.counter|divisibleby:1 %}
                     <div class="col-12 d-sm-none mb-5">
                     
@@ -293,22 +244,40 @@
 </div>
     </div>
 
-    <!-- Back to top button -->
-    <div class="btt-button shadow-sm rounded-0 border border-black">
-        <a class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-        </a>	
-    </div>
+<!-- Back to top button -->
+<div class="btt-button shadow-sm bg-white rounded-0 border border-black">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>	
 </div>
+
 {% endblock %}
 
 
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
-		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
+		
+
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 500) {
+                $('.btt-link').fadeIn();
+            } else {
+                $('.btt-link').fadeOut();
+      
+            }
+        });
+
+        $('a.btt-link').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 500);
+            return false;
+        });
+    });
+
+
 	</script>
     
     <script type="text/javascript">
@@ -333,7 +302,4 @@
             }
         })
     </script>
-
-   
-
 {% endblock %}

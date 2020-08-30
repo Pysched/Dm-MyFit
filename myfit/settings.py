@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'home',
     'training',
     'products',
-    'nutrition',
     'blog',
     'bag',
     'membership',
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'profiles',
     'courses',
+    'contactus',
 ]
 
 MIDDLEWARE = [

@@ -24,11 +24,11 @@ urlpatterns = [
     path('', include('home.urls')),
     path('training/', include('training.urls')),
     path('products/', include('products.urls')),
-    path('nutrition/', include('nutrition.urls')),
     path('blog/', include('blog.urls')),
     path('bag/', include('bag.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
+    path('contactus/', include('contactus.urls')),
     path('courses/', include('courses.urls', namespace='courses')),
     path('membership/', include('membership.urls', namespace='memberships')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
