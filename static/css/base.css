@@ -3,7 +3,7 @@ html{
 }
 
 body{
-    background:url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.askmen.com%2F1080x540%2F2017%2F02%2F23-032912-strength_building_lessons_men_can_learn_from_women.jpg&f=1&nofb=1')no-repeat center center fixed;
+    background:url('/media/home.png')no-repeat center center fixed;
     background-size:cover;
     height: calc(100vh - 164px);
     color:#555;
