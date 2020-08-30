@@ -37,16 +37,50 @@ Milestone Project Four
   - [Disclaimer](#Disclaimer)
 
 ## About
+MyFit is an e-commerence Full-Stack site, developed as my milestone 4 project with Code Institue as part of the Full-Stack software development course. The main purpose of the site is to sell clothing, equipment and nutrition products to customer who have signed up and registered with the site.
 
+The site also encourages engagment through the deployment of a review system for each product, whereby customers can rate products and leave reviews for other users to get a better insight into a products value. 
 
+Users are also able to send email enquires to the site with their questions and queries and feedback from the applicaiton informs customers that this has been subitted.
 
-### Why This Project?
+Users can also purchase products through the stripe authentication service for payments and upon payment submission are presented with billing informaiton and the facility to review their orders. 
 
+Users also recieve an email to their own email address from the site informing them of their purchases. 
+
+Further engagment with site includes the signing up process whereby user have to check a verification link, sent to the email they provide, in order to access site functionality.
+
+The deployed site can be viewed at: https://myfit.herokuapp.com/ 
+
+To make test payments please use the following details to ensure success:
+- Card number 4242 4242 4242 4242
+- Expiry 04 24
+- CVC 242
+- ZIP CODE - 42424
 
 
 ## UX
 
+The best sites are those that are easy to navigate, easy to use and are logical without being stale in there implementation. To this end I created my site to follow these guiding principles. 
+
+A prominant navigation system both in the header area and in the footer, accompanied by a back to top button, enables users regardless of there position on the page to be able to use and get to a navigation area with ease. 
+
+Error handling and user feedback are a core element of the user experience. There a many predefined error messages and progress messages that inform the user at each interaction point of their progress. 
+
+This is further enhanced through the email feedback forms that are sent to users either from a query or a purchase.
+
+Authentication of payments and user login are a core element of the site. as the sites aim as a business is to sell products, and to ensure that the customer gets their product as well as ensuring the business makes profit, there is a requireemtn to use any of the core funcationality of the site that a user must register with details. 
+
+Furthere details are required to amke purchases, with previous purchases detail available within the user profile seciton for users to review their buying history.
+
 ### User Stories
+
+The site plan and general development was devised together with user stories. These stories aided in the development of the functionality of the site, as they focused me, the developer to focus on the key task required to make the site functional from the perspective of the user.
+
+See attached file: 
+
+
+
+
 
 ### Style Rationale
 
@@ -105,8 +139,8 @@ With more time and knowledge, I would like to implement some additional features
 
 ### Version Control
 
-- [**Git**](https://git-scm.com/)
-    - I've used **Git** as a version control system to regularly add and commit changes made to project in AWS Educate Cloud9, before pushing them to GitHub.
+- [**GitPod**](https://gitpod.com/)
+    - I've used **GitPod** as a version control system to regularly add and commit changes made to project in its ide, before pushing them to GitHub.
 - [**GitHub**](https://github.com/)
     - I've used **GitHub** as a remote repository to push and store the committed changes to my project from Git.
 
@@ -134,9 +168,6 @@ In addition to my own testing, I also asked family members, friends and the Slac
 - I used the [W3C CSS Validator tool](https://jigsaw.w3.org/css-validator/#validate_by_input) to validate my CSS code.
 - I used the [Esprima Syntax Validator tool](http://esprima.org/demo/validate.html) to validate my JavaScript syntax.
 - I used the [Pep8 Online tool](http://pep8online.com/) to validate my Python syntax.
-
-### Automated Testing
-
 
 ### Bugs / Problems
 
