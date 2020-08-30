@@ -232,8 +232,9 @@ Once the migrations are completed and the super user has been created successful
 
 
 ### Acknowledgements
+Inspiration for the product review system was taken from a tutorial found here: https://www.youtube.com/watch?v=OvTs8BMLb7o
 
-
+The shopping system, checkout, shopping bag, and general framework for the site was developed out of the learning material provided by Code insitute tutorials, and customised to suit the project. 
 ### Disclaimer
 
 This project is for educational purposes only.

@@ -161,28 +161,28 @@
     <section class="container-fluid">
         <div class="row mt-5">
             <div class="col col-lg-8 offset-lg-2">
-                <h4 class="text-uppercase">Reviews</h4>
+                <h4 class="text-uppercase">Comments</h4>
                 <hr class="hr-bag">
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 offset-lg-2 all-reviews mb-4">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 offset-lg-2 all-comment mb-4">
                 {% if comments %}
                     {% for comment in comments %}
-                        <div class="single-review mb-3">
-                            <div class="review-heading">
+                        <div class="single-comment mb-3">
+                            <div class="comment-heading">
                                 <span class="mr-3 text-muted"><i class="fas fa-user"></i> {{ comment.user.username }}</span>
                                 <span class="text-muted"><i class="fas fa-clock"></i> {{ comment.created_at }}</span>
-                                <div class="review-rating float-right">
-                                    <i class="fas fa-star{% if comment.rate < 1 %}-o empty{% endif %}"></i>
-                                    <i class="fas fa-star{% if comment.rate < 2 %}-o empty{% endif %}"></i>
-                                    <i class="fas fa-star{% if comment.rate < 3 %}-o empty{% endif %}"></i>
-                                    <i class="fas fa-star{% if comment.rate < 4 %}-o empty{% endif %}"></i>
-                                    <i class="fas fa-star{% if comment.rate < 5 %}-o empty{% endif %}"></i>
+                                <div class="comment-rating float-right">
+                                    <i class="fas fa-star gold{% if comment.rate < 1 %}-o empty{% endif %}"></i>
+                                    <i class="fas fa-star gold{% if comment.rate < 2 %}-o empty{% endif %}"></i>
+                                    <i class="fas fa-star gold{% if comment.rate < 3 %}-o empty{% endif %}"></i>
+                                    <i class="fas fa-star gold{% if comment.rate < 4 %}-o empty{% endif %}"></i>
+                                    <i class="fas fa-star gold{% if comment.rate < 5 %}-o empty{% endif %}"></i>
                                 </div>
                                 <div class="mt-2"><p><strong>{{ comment.subject }}</strong></p></div>
                             </div>
-                            <div class="review-body">
+                            <div class="comment-body">
                                 {{ comment.comment }}
                             </div>
                         </div>
@@ -198,7 +198,7 @@
                     {% csrf_token %}
                     {{ comment_form|crispy }}
                     {% if user.is_authenticated %}
-                        <button id="submit-button" class="btn btn-purple">
+                        <button id="submit-button" class="btn btn-black rounded-0 mt-3">
                             <span class="text-uppercase">Add review</span>
                         </button>
                     {% else %}

@@ -228,9 +228,28 @@ a .nav-item-link{
         padding-top:88px;
 }
 
+
+
+
+
+
 a.category-badge > span.badge:hover {
-    background:#212529!important;
+    background:#0c82f1!important;
     color:#fff!important;
+    
+}
+
+.border{
+    border:1px solid #0c82f1!important;
+}
+
+.badge{
+    font-size:.9em!important;
+}
+
+.active{
+    background:#0c82f1;
+    color:#fff;
 }
 
 .btt-link, a.update-link, a.remove-item {
@@ -372,8 +391,9 @@ footer{
     z-index:-1;
 }
 
-.products{
-
+#filter{
+    padding-right:5px!important;
+    padding-left:5px!important;
 }
 
 
@@ -482,3 +502,24 @@ footer{
     border-color: #dc3545;
     border-radius: 0;
 }
+
+/* -- Comment rating star --*/
+
+
+.fas-star,
+.fas-star-half-alt {
+    color: #FFBA00;
+
+}
+
+i.fas.fa-star.gold{
+    color: #FFBA00;
+}
+
+
+
+/* -- products page --*/
+.heading{
+    margin-top:150px!important;
+}
+

@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Product, Category, Comment
 from .forms import ProductForm, CommentForm
 
+
+
 import math
 # Create your views here.
 
@@ -14,9 +16,10 @@ import math
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('id')
     query = None
     categories = None
+    category = None
     sort = None
     direction = None
 
@@ -39,6 +42,7 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
+            category_page = request.GET['category']
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -58,7 +62,9 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_categories': categories,
+        'category': category,
         'current_sorting': current_sorting,
+        'direction': direction,
     }
 
     return render(request, 'products/products.html', context)
