@@ -68,6 +68,10 @@ body{
 }
 
 /* -- Allauth form -- */
+<<<<<<< HEAD
+=======
+.
+>>>>>>> parent of 139ae00... edited templates for allauth as styling has broken for some unknow reason
 .allauth-form-inner-content p {
     margin-top:1.5rem;
     color:#6c757d;
@@ -104,6 +108,7 @@ body{
     transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 .allauth-form-inner-content button:hover,
+<<<<<<< HEAD
 .allauth-form-inner-content input[type='submit']:hover{
     color:#fff;
     background-color:#222;
@@ -113,6 +118,18 @@ body{
 .allauth-form-inner-content a{
     color:#17a2b8;
 }
+=======
+.allauth-form-inner-content input[type='submit']:hover {	
+	color: #fff;
+    background-color: #222;
+    border-color: #222;
+}
+
+.allauth-form-inner-content a {
+	color: #17a2b8; /* text-info */
+}
+
+>>>>>>> parent of 139ae00... edited templates for allauth as styling has broken for some unknow reason
 
 
 /*--- Search Bar -- */
