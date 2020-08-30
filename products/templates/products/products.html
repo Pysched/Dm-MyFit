@@ -26,45 +26,7 @@
         </div>
     </div>
 
-    <!-- <div class="row">
-        <div class="col text-center">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a href="{% url 'products' %}?category=mens_footwear,mens_shorts,mens_tshirts,mens_jackets,womens_footwear,womens_shorts,womens_tshirts,womens_jackets,sports_nutrition,fitness_equipment,gym_equipment,gym_accessories" class="p-3 mt-3 ml-2 badge border rounded-0" >All Products</a>
-                </li>
-                <li class="nav-item">
-
-                    <a href="{% url 'products' %}?category=mens_footwear,mens_shorts,mens_tshirts,mens_jackets" class="category-badge text-decoration-none" > 
-
-                    <span class="{% if request.get_full_path == '/products/?category=mens_footwear,mens_shorts,mens_tshirts,mens_jackets' %}active{% endif %} p-3 mt-3 ml-2 badge border rounded-0" > Mens </span> 
-
-                  </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'products' %}?category=womens_footwear,womens_shorts,womens_tshirts,womens_jackets" class="category-badge text-decoration-none" >
-                    
-                    <span class="{% if request.get_full_path == '/products/?category=womens_footwear,womens_shorts,womens_tshirts,womens_jackets' %}active{% endif %} p-3 mt-3 ml-2 badge border rounded-0"> Womens </span>
-
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'products' %}?category=fitness_equipment,gym_accessories,gym_equipment" class="category-badge text-decoration-none" >
-
-                    <span class="{% if request.get_full_path == '/products/?category=fitness_equipment,gym_accessories,gym_equipment' %}active{% endif %} p-3 mt-3 ml-2 badge border rounded-0" > Gym Equipment </span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'products' %}?category=sports_nutrition" class="category-badge text-decoration-none"> 
-                    
-                    <span class="{% if request.get_full_path == '/products/?category=sports_nutrition' %}active{% endif %} p-3 mt-3 ml-2 badge border rounded-0"> Nutrition </span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div> -->
+   
     
        
 
@@ -299,16 +261,30 @@
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
         </a>	
     </div>
-</div>
+
 {% endblock %}
 
 
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
-		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
+		 $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 500) {
+                $('.btt-link').fadeIn();
+            } else {
+                $('.btt-link').fadeOut();
+
+            }
+        });
+
+        $('a.btt-link').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 500);
+            return false;
+        });
+    });
 	</script>
     
     <script type="text/javascript">

@@ -4,9 +4,18 @@
 {% load account %}
 
 {% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
 
+        </div>
+    </div>
+</div>
+{% endblock %}
 
 {% block inner_content %}
+<div class="container my-5 border p-5">
 <hr>
 <h2 class="mb-4">{% trans "Confirm E-mail Address" %}</h2>
 <hr>
@@ -29,5 +38,8 @@
 <p>{% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new e-mail confirmation request</a>.{% endblocktrans %}</p>
 
 {% endif %}
+</div>
 
+<div class="container my-5 py-5 h-75">
+<div class="row py-5 my-5"></div></div>
 {% endblock %}
