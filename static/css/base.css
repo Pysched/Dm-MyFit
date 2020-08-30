@@ -167,10 +167,10 @@ input[type=text]:focus {
   width: 100%!important;
 }
 
-.form-control{
+/* .form-control{
     width:250px!important;
     
-}
+} */
 
 
 .main-btn:hover, .main-btn:active, .main-btn:focus,
@@ -221,10 +221,10 @@ a .nav-item-link{
 
 /* -- Bootstrap override -- */
 /* -- Search bar -- */
-.form-control{
+/* .form-control{
     border-radius:0!important;
     border:0!important;
-}
+} */
 
 .blue{
     background-color:rgb(12, 130, 241);
