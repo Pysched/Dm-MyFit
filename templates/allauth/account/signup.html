@@ -4,7 +4,17 @@
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
 {% block inner_content %}
+<div class="container my-5 border p-5">
 <hr>
 <h2 class="mb-4 mt-5">{% trans "Sign Up" %}</h2>
 <hr>
@@ -17,8 +27,12 @@
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" class="form-control" />
   {% endif %}
-  <a class="btn btn-outline-black rounded-0" href="{% url 'account_login' %}">Back to Login</a>
-  <button type="submit">{% trans "Sign Up" %}</button>
+  <div class="row mt-3 ml-2">
+  <a class="btn btn-outline-black rounded-0 mr-2" href="{% url 'account_login' %}">Back to Login</a>
+  <button type="submit" class="ml-2">{% trans "Sign Up" %}</button>
+  </div>
 </form>
-
+</div>
+<div class="container ">
+<div class="row py-5 my-5"></div></div>
 {% endblock %}

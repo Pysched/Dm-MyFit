@@ -159,7 +159,6 @@
             </div>
     </div>
 </div>
-
     <div class="container-fluid">
         <div class="row mt-5">
             <div class="col col-lg-8 offset-lg-2">
@@ -194,7 +193,7 @@
                     <p>Be the first one to leave a review!</p>
                 {% endif %}
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-5 form p-3  text-white py-2">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-5 form p-3  text-white py-2 p-3">
                 <h5 class="text-uppercase text-white">Leave a comment</h5>
                 <form action="{% url 'add_comment' product.id %}" method="POST" class="form-group mt-3 comment-form">
                     {% csrf_token %}

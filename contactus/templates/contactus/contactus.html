@@ -32,7 +32,7 @@
             <form action="{% url 'contactus' %}" method="POST" class="form-group">
                 {% csrf_token %}
                 {{ contact_form|crispy }}
-                <button id="submit-button" class="btn btn-lg btn-purple">
+                <button id="submit-button" class="btn btn-lg ">
                     <span class="text-uppercase">Send</span>
                     <span class="icon">
                         <i class="far fa-envelope"></i>

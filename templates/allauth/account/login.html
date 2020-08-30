@@ -5,8 +5,17 @@
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
-{% block inner_content %}
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
 
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block inner_content %}
+<div class="container my-5 border p-5">
 <hr>
 <h2 class="logo-font mb-4">{% trans "Sign In" %}</h2>
 <hr>
@@ -47,5 +56,8 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
     <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </p>
 </form>
+</div>
 
+<div class="container my-5 py-5 h-75">
+<div class="row py-5 my-5"></div></div>
 {% endblock %}

@@ -30,5 +30,5 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('contactus/', include('contactus.urls')),
     path('courses/', include('courses.urls', namespace='courses')),
-    path('membership/', include('membership.urls', namespace='memberships')),
+    path('membership/', include('membership.urls', namespace='membership')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

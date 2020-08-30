@@ -77,22 +77,10 @@ def PaymentView(request):
         try:
             token = request.POST['stripeToken']
 
-            # UPDATE FOR STRIPE API CHANGE 2018-05-21
-
-            '''
-            First we need to add the source for the customer
-            '''
-
             customer = stripe.Customer.retrieve(
                     user_membership.stripe_customer_id)
             customer.source = token
             customer.save()
-
-            '''
-            Now we can create the subscription using only the customer as we don't need to pass their
-            credit card source anymore
-            '''
-
             subscription = stripe.Subscription.create(
                 customer=user_membership.stripe_customer_id,
                 items=[
