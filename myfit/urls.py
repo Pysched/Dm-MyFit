@@ -29,6 +29,6 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
     path('contact/', include('contact.urls')),
-    path('courses/', include('courses.urls', namespace='courses')),
-    path('membership/', include('membership.urls', namespace='membership')),
+   
+   
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
