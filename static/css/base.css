@@ -74,9 +74,9 @@ body{
     color:#6c757d;
 }
 .allauth-form-inner-content input {
-    border-color:#000;
     border-radius:0;
-}
+    margin-top:15px!important;
+ }
 
 .allauth-form-inner-content label:not([for='id_remeber']){
     display:none;
@@ -103,12 +103,15 @@ body{
     line-height:1.5;
     border-radius:0;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    margin-top:15px;
 }
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover{
     color:#fff;
     background-color:#222;
     border-color:#222;
+    margin-top:15px;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content a{
@@ -116,9 +119,10 @@ body{
 }
 
 
+
+
 /*--- Search Bar -- */
 .form-control, input[type=text] {
-  width: 100%!important;
   box-sizing: border-box!important;
   border: 2px solid #ccc!important;
   border-radius: 4px!important;
@@ -127,19 +131,8 @@ body{
   background-image: url('searchicon.png');
   background-position: 10px 10px!important; 
   background-repeat: no-repeat!important;
-  
- 
+  margin-top:15px;
 }
-
-input[type=text]:focus {
-  width: 100%!important;
-}
-
-/* .form-control{
-    width:250px!important;
-    
-} */
-
 
 .main-btn:hover, .main-btn:active, .main-btn:focus,
 .btn-black:hover, .btn-black:hover, .btn-black:focus{
@@ -211,17 +204,11 @@ a .nav-item-link{
     margin-right:15px!important;
 }
 
-/* .search-box{
-    margin-right:35px;
-
-} */
-
 .dropdown-menu{
     margin-top:7px;
     border-radius:0;
     background-color:#fff;
 }
-
 
 .dropdown-item:focus{
     color:#343a40;
@@ -235,7 +222,6 @@ a .nav-item-link{
         padding-top:166px;
 }
 
-
 .hr-white{
     color: #fff;
     background-color:#fff;
@@ -243,12 +229,9 @@ a .nav-item-link{
     float:left;
 }
 
-
-
 a.category-badge > span.badge:hover {
     background:#0c82f1!important;
     color:#fff!important;
-    
 }
 
 .border{
@@ -549,7 +532,6 @@ footer{
 
 /* -- Comment rating star --*/
 
-
 .fas-star,
 .fas-star-half-alt {
     color: #FFBA00;
@@ -559,8 +541,6 @@ footer{
 i.fas.fa-star.gold{
     color: #FFBA00;
 }
-
-
 
 /* -- products page --*/
 .heading{

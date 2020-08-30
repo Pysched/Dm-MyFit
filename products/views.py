@@ -7,8 +7,6 @@ from django.contrib.auth.decorators import login_required
 from .models import Product, Category, Comment
 from .forms import ProductForm, CommentForm
 
-
-
 import math
 # Create your views here.
 
