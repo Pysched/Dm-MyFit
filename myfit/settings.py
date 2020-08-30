@@ -44,14 +44,19 @@ INSTALLED_APPS = [
     'home',
     'training',
     'products',
+    'nutrition',
     'blog',
     'bag',
    
     'checkout',
     'crispy_forms',
     'profiles',
+<<<<<<< HEAD
 
     'contact',
+=======
+    'courses',
+>>>>>>> parent of a8b57e7... create contact us app, setup of models, urls, views and html, reworked requirements as alot ad not taken affect
 ]
 
 MIDDLEWARE = [
