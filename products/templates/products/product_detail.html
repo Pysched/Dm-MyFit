@@ -109,7 +109,7 @@
                 </div>
                 {% endif %}
                      <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
+                                <p class="mt-3"><strong class="text-white">Quantity:</strong></p>
                                 <div class="form-group w-50">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -139,7 +139,7 @@
                    
                     <div class="col{% if s%}-12 mt-2{% endif %}">
                         <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
-                            <span class="icon">
+                            <span class="icon-black">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
@@ -148,7 +148,7 @@
                     </div>
                         
                     {% else %}
-                          <p class="text-white">You must be logged in to add reviews!<br> <a href="{% url 'account_login' %}">Login</a>
+                          <p class="text-white">You must be logged in to make purchases<br> <a href="{% url 'account_login' %}">Login</a>
                          or <a href="{% url 'account_signup' %}">Register</a></p>
                     {% endif %}
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -178,8 +178,8 @@
                     {% for comment in comments %}
                         <div class="single-comment mb-3">
                             <div class="comment-heading">
-                                <span class="mr-3 text-muted"><i class="fas fa-user"></i> {{ comment.user.username }}</span>
-                                <span class="text-muted"><i class="fas fa-clock"></i> {{ comment.created_at }}</span>
+                                <span class="mr-3 text-muted"><i class="fas fa-user"></i> {{ comment.user.username|capfirst  }}</span>
+                                <span class="text-muted"><i class="fas fa-clock"></i> {{ comment.create_at }}</span>
                                 <div class="comment-rating float-right">
                                     <i class="fas fa-star gold{% if comment.rate < 1 %}-o empty{% endif %}"></i>
                                     <i class="fas fa-star gold{% if comment.rate < 2 %}-o empty{% endif %}"></i>
@@ -187,10 +187,10 @@
                                     <i class="fas fa-star gold{% if comment.rate < 4 %}-o empty{% endif %}"></i>
                                     <i class="fas fa-star gold{% if comment.rate < 5 %}-o empty{% endif %}"></i>
                                 </div>
-                                <div class="mt-2"><p><strong>{{ comment.subject }}</strong></p></div>
+                                <div class="mt-2"><p><strong>{{ comment.subject|capfirst  }}</strong></p></div>
                             </div>
                             <div class="comment-body">
-                                {{ comment.comment }}
+                                {{ comment.comment|capfirst  }}
                             </div>
                         </div>
                         <hr>

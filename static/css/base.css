@@ -187,12 +187,17 @@ a .nav-item-link{
     display:block;    
 }
 
+/* -- comments/reviews --*/
+.form{
+    background-color:#343a40;
+}
+
 /* -- Bootstrap override -- */
 /* -- Search bar -- */
-/* .form-control{
+.form-control{
     border-radius:0!important;
     border:2px solid #343a40!important;
-} */
+}
 
 .blue{
     background-color:rgb(12, 130, 241);
@@ -206,10 +211,10 @@ a .nav-item-link{
     margin-right:15px!important;
 }
 
-.search-box{
+/* .search-box{
     margin-right:35px;
 
-}
+} */
 
 .dropdown-menu{
     margin-top:7px;
@@ -227,11 +232,16 @@ a .nav-item-link{
 }
 
 .header-container{
-        padding-top:88px;
+        padding-top:166px;
 }
 
 
-
+.hr-white{
+    color: #fff;
+    background-color:#fff;
+    width:58%;
+    float:left;
+}
 
 
 
@@ -273,6 +283,10 @@ a.category-badge > span.badge:hover {
 }
 
 .icon{
+    color:#fff;
+}
+
+.icon-black{
     color:#000;
 }
 

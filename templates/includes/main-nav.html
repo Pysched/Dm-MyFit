@@ -12,16 +12,14 @@
             <li class="nav-item  ">
                 <a class="nav-link" href="{% url 'home' %}">Home </a>
             </li>
-            
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog' %}">Blog</a>
-        </li>
         <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{% url 'products' %}">Shop</a>
         </li>
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
 
         <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,20 +28,18 @@
                 </div>    
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
                         <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                     {% endif %}
                         <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
                         <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                    {% else %}
                    <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-        </li>
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                     </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
                     {% endif %}
                 </div>
             </li>

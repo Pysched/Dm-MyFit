@@ -5,24 +5,23 @@
         <a href="{% url 'home' %}" class="nav-link main-logo">
             <h2 class="logo-text white-text my-0"><strong>My<span class="blue-text">Fit</span></strong></h2>
         </a>
-        <p class="white-text ml-3">Day by day, step by step, Rome wasn't built in a day!</p>
+        <p class="white-text ml-3">A new sports shop for everything you need.</p>
+        <p class="white-text ml-3">Watch this space, we will be adding excercise routines in the near future!</p>
       </div>
       <hr class="clearfix w-100 d-md-none pb-3">
       <div class="col-md-3 mb-md-0 mb-3">
         <h5 class="text-uppercase white-text">Links</h5>
         <ul class="list-unstyled white-text">
-          <li>
-            <a href="#!">Training</a>
-          </li>
-          <li>
-            <a href="#!">Nutrition</a>
-          </li>
-          <li>
-            <a href="#!">Blog</a>
-          </li>
-          <li>
-            <a href="#!">Shop</a>
-          </li>
+          <li class="nav-item  ">
+                <a class="nav-link" href="{% url 'home' %}">Home </a>
+            </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'products' %}">Shop</a>
+        </li>
+         
         </ul>
 
       </div>
@@ -30,12 +29,13 @@
         <h5 class="text-uppercase white-text">Login / Register</h5>
 
         <ul class="list-unstyled">
-          <li>
-            <a href="#!">Login</a>
-          </li>
-          <li>
-            <a href="#!">Register</a>
-          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+        </li>
         </ul>
       </div>
     </div>
