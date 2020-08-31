@@ -70,19 +70,41 @@ This is further enhanced through the email feedback forms that are sent to users
 
 Authentication of payments and user login are a core element of the site. as the sites aim as a business is to sell products, and to ensure that the customer gets their product as well as ensuring the business makes profit, there is a requireemtn to use any of the core funcationality of the site that a user must register with details. 
 
-Furthere details are required to amke purchases, with previous purchases detail available within the user profile seciton for users to review their buying history.
+Further details are required to make purchases, with previous purchases detail available within the user profile seciton for users to review their buying history.
 
 ### User Stories
 
 The site plan and general development was devised together with user stories. These stories aided in the development of the functionality of the site, as they focused me, the developer to focus on the key task required to make the site functional from the perspective of the user.
 
-See attached file: 
+#### Customer
+
+- To use a site that sells sports clothing and deliveres to my address.
+- to be able to browse a large selection of clothes, including shoes, shorts, tops, and jackets. 
+- To be able to browse sports equipment, sports accessories, and gym equipment
+- To be able to browse for nutrtion products to aid my excercise ambitions
+- To filter my searches by price, rating, alphabet, category and brand
+- To type a search for a product and to see results
+- To get feedback from the system I am using so I know what I'm doing what I have does
+- I select items by quantity and size
+- To have product details available to me to help me make my decisions
+- To view a list of all products
+- To have a shopping cart that holds my current selection
+- The ability to review my previous orders and bring up that orders details
+- To recieve notification in email form that my order has been processed.
+- To have afully funcationly authentification system for sign up and payments
+- To be able to review products and rate them, so that others may learn from my experience
+- To review the comments left by others to help me make my decisions about a product
+- To be able to send a message to the business owner and reieve confirmation
 
 
-
-
+#### Business Owner
+- To have a admin management system(django-admin) that allows me to review my products(django-admin), customers(django-admin) and transactions(django-admin & stripe payments system)
+- The ability to add, remove, review and update the products I host on my site
+- To receive feedback from customers who use the site
+- to have customers leave feedback on products based on their expereinces
 
 ### Style Rationale
+
 
 
 
@@ -108,34 +130,31 @@ With more time and knowledge, I would like to implement some additional features
 
 ## Technologies Used
 
-- [**Balsamiq**](https://balsamiq.com/)
-    - I've used **Balsamiq** to create wireframes of my website/app before building it.
 - [**HTML**](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
     - The project uses **HTML** to create the basic elements and content of my app.
 - [**CSS**](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)
     - The project uses **CSS** to apply the custom styles to the elements and content of my app. The base.html file is linked directly to the custom.css stylesheet.
-- [**Materialize**](https://materializecss.com/)
-    - The project uses the **Materialize** framework to add a responsive grid system, prebuilt components, plugins built on jQuery, and Materialize styles to my app, before adding my custom styles.
-- [**jQuery**](https://jquery.com)
-    - The project uses **jQuery** as the primary JavaScript functionality. This is both the standard jQuery that is built with Materialize components, and my custom jQuery used in my script.js file.
+- [**JavaScript**](https://jquery.com)
+    - The project uses **Javascript** as the primary JavaScript functionality. This is both the standard jQuery that is built with Materialize components, and my custom jQuery used in my script.js file.
+- [**Bootstrap**](https://bootstrap.com/)
+    - The project uses the **Bootstrap** framework to add a responsive grid system, prebuilt components, plugins built on jQuery, and Bootstrap class and styles to my app, before adding my custom styles.
 - [**Python**](https://www.python.org/)
     - The project uses **Python** as the back-end programming language for my app.
 - [**Django**](https://www.djangoproject.com/)
     - The project uses **Django** as the Python web framework.
-- [**Jinja**](https://jinja.palletsprojects.com/en/2.10.x/)
-    - The project uses **Jinja** for templating with Python and Django in the HTML code. I used **Jinja** to simplify my HTML code, avoid repetition, and allow simpler linking of the back-end to the front-end.
 - [**Stripe API**](https://stripe.com/gb)
     - The project uses **Stripe** to make secure payments for logging and upvoting Feature Requests. The project uses Stripe's test payment functionality.
-- [**C3.js**](https://c3js.org/)
-    - The project uses **C3.js** to render interactive charts and graphs for the dashboard.
 - [**SQLite**](https://www.sqlite.org/index.html)
     - The project uses **SQLite** as the relational database to hold the backend information for the varions models used, when running locally.
 - [**PostgreSQL**](https://www.postgresql.org/)
     - The project uses Heroku's **PostgreSQL** relational database to hold the backend information for the various models used, when deployed remotely.
-- [**Google Fonts**](https://fonts.google.com/)
-    - The project uses **Google Fonts** to style the text and suit my chosen theme. The brand logo uses the *_Open Sans_* font and the rest of the site uses the *_Roboto_* font.
+- [**AWS S3**](https://www.aws.amazon.com/s3/)
+    - The object storage service S3 was used to house the staic css and media files and provide scalability, security and performance to the site.
 - [**Font Awesome**](https://fontawesome.com/)
     - The project uses **Font Awesome** for the various icons in my app.
+## Back-end Technologies
+- [**Python3**](https://python.org) 
+    - Python can be easy to pick up whether you're a first time programmer or you're experienced with other languages.
 
 ### Version Control
 
@@ -166,7 +185,6 @@ In addition to my own testing, I also asked family members, friends and the Slac
 - I used the [W3C HTML Validator tool](https://validator.w3.org/#validate_by_input) to validate my HTML code.
     - The W3C Validator tool doesn't recognise the Jinja templating, which has resulted in it showing a lot of errors in relation to the Jinja code. However, all other code is validating fine.
 - I used the [W3C CSS Validator tool](https://jigsaw.w3.org/css-validator/#validate_by_input) to validate my CSS code.
-- I used the [Esprima Syntax Validator tool](http://esprima.org/demo/validate.html) to validate my JavaScript syntax.
 - I used the [Pep8 Online tool](http://pep8online.com/) to validate my Python syntax.
 
 ### Bugs / Problems
@@ -251,21 +269,22 @@ To run my code locally, users can download a local copy of my code to their desk
 
 Once the migrations are completed and the super user has been created successfully, the site should be running locally. To deploy the site remotely, follow the instructions in the [Deployment](#Deployment) section.
 
-### Media And Static Folders
-
 
 ## Credits
 
-### Content
-
-
 ### Media
 
+The images used in this site are used for educational purposes only and no attempt is being made to defraud any organisation. These images have been sourced from the web to illustrate the projects potential.
+
+All credit goes to those referenced in the urls.
 
 ### Acknowledgements
 Inspiration for the product review system was taken from a tutorial found here: https://www.youtube.com/watch?v=OvTs8BMLb7o
 
 The shopping system, checkout, shopping bag, and general framework for the site was developed out of the learning material provided by Code insitute tutorials, and customised to suit the project. 
+
+Inspiration for sevral elements of the site and inspiration of carrying on after too many hours of banging my hand against a keyboard was taken from fellow students in the slack community, and also being able to review other students work and see how they got on and how they implemented there systems.
+
 ### Disclaimer
 
 This project is for educational purposes only.
