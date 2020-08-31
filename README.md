@@ -21,7 +21,7 @@ MyFit is an e-commerence Full-Stack site, developed as my milestone 4 project wi
 
 The site also encourages engagment through the deployment of a review system for each product, whereby customers can rate products and leave reviews for other users to get a better insight into a products value. 
 
-Users are also able to send email enquires to the site with their questions and queries and feedback from the applicaiton informs customers that this has been subitted.
+Users are also able to send email enquires to the site with their questions and queries and feedback from the application informs customers that this has been submitted.
 
 Users can also purchase products through the stripe authentication service for payments and upon payment submission are presented with billing informaiton and the facility to review their orders. 
 
@@ -107,7 +107,21 @@ The font used for the is site was Seoige. This was chosen as it is a clear font,
 
 
 ### Wireframes
+My initial wireframes consisted of a rough outline of how I preceived the site taking shape. I had a strong idea of the colour plaete, that being, dark greys, strong blues, white and black. A polished feel. The site sturucture really came to be based on the features I was creating for the product. I had several other variations as time went on, in terms of a fuller flshed out membership system, courses system where video urls would be embedded etc.. 
 
+However the following links are the basis of from where I started designing and creating the application. 
+
+This evolved as the project progresses and the features I was creating took shape.
+
+[Home page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_762/v1598842014/20200831_034453_gfdfqj.jpg)
+
+[Products page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_838/v1598842015/20200831_034424_fn60vi.jpg)
+
+[Membership page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_745/v1598842016/20200831_034330_f5alnx.jpg)
+
+[Product detail and review section ](https://res.cloudinary.com/pysched/image/upload/c_scale,h_745/v1598842017/20200831_034352_ziyvix.jpg)
+
+[Contact page](https://res.cloudinary.com/pysched/image/upload/c_scale,h_744/v1598842017/20200831_034407_rtkkxb.jpg)
 
 
 ## Features
