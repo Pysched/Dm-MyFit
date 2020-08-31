@@ -34,6 +34,20 @@ Milestone Project Four
   - [Acknowledgements](#Acknowledgements)
   - [Disclaimer](#Disclaimer)
 
+
+### Live App Link
+
+Click the link below to run my project in the live environment:
+
+[myFit](https://myfit.herokuapp.com/)
+
+### Repository Link
+
+Click the link below to visit my project's GitHub repository:
+
+[myFit GitHub Repository](https://github.com/Pysched/Dm-MyFit)
+
+
 ## About
 MyFit is an e-commerence Full-Stack site, developed as my milestone 4 project with Code Institue as part of the Full-Stack software development course. The main purpose of the site is to sell clothing, equipment and nutrition products to customer who have signed up and registered with the site.
 
@@ -49,7 +63,7 @@ Further engagment with site includes the signing up process whereby user have to
 
 Further features where planned initially for this project. Those included a membership system that reuired the user to sign up various packages and have access to excerices and tutorial videos. Extensive amounts of time where put into it, however I was unable to get it to work properly and to my sheer disappointment, a versioning issue at the last hurdle required me to remove it from the final submission. 
 
-There should be large elemts of both memberhip apps and course apps in the commit history.
+There should be large elements of both the membership apps and course apps in the commit history.
 
 Nonetheless the amount of knowledge, techniques that I learnt in this project cannot be understated. Thereis quite a large amount of work involved in developing a django site, combined with learning python syntax and methodologies. 
 
@@ -155,6 +169,55 @@ The font used for the is site was Seoige. This was chosen as it is a clear font,
 * Each product when hovered over has a scale css element attached to it, to provide the user with a closer look at t he image
 * Each product is arranged within a card element, thathas the products 
 
+#### Product details Page
+
+* On selection of a product, the user is taken to the product deatils page
+* Product details; sku, rating, price, description, recommended for, add to cart button are present
+* Reviews and ratings left by registered users
+
+#### Reviews
+
+* On product detail page, a registered user has the option to leave a review and to rate the product. This is made via a form that has an input field for ratings with options from no rating to 5. 
+
+#### Bag
+
+* on the bag page, the user can see its selected products displayed on top of each other. Each product from the bag contains its image, name, price, quantity selected and the subtotal which is price multiplied by quantity
+* the user has the option to update each products quantity or remove it
+* on bottom right of the page, the grand total with delivery included is displayed and two buttons. One to proceed to checkout and one to go back and shop more
+
+#### Checkout
+
+* Checkout form with required fields
+* Payment form from Stripe that takes: card number, CVC, expiry date and ZIP code
+* Order summary, with product details, quantity, sizes, delivery charge and grandtotal.
+
+#### Emails
+
+* Upon signing up to the site the user is sent an activation email, this email actually arrivals at the address provided
+
+#### Register and login
+
+* Register form asks for details and checks for confirms matches
+* login form check sagainst saved details
+* Confirmation email for registering
+* Facility to change password or forgotten password fix
+
+#### Profile
+
+* Registered users can use this link to check their order history
+* This feature isnt availe to non registered users
+* Previous orders can be selected and read from the database to the order history form
+
+#### Contact
+
+* contains the contact details of the business: email and phone number
+* contains a form for message
+
+#### Footer
+
+* Has branding logo that is a home button
+* Has clickable and functioning links to navigation and sign up or register
+* Copyright logo
 
 
 ### Features Left to Implement
@@ -169,6 +232,52 @@ With more time and knowledge, I would like to implement some additional features
 * A courses app, that would have  numerours excerices training routines embedded within it, that could be accessed depending on the customers membership level
 
 * A blog app, that would encourage fellow users to discuss excercise realted activties, routines food plans and how they are progressing through various activities
+
+## Technologies
+
+### Tools
+
+* [GitPod](https://gitpod.com/) - Developed in the IDE and version control
+* [GitHub](https://github.com/) - Repository
+* [Heroku](https://heroku.com/) - Application hosting and deployment
+* [AWS S3](https://aws.amazon.com/s3/) - Housing of Static and Media Files
+* [Stripe](https://stripe.com/) - Secure Payment system
+* [Sqlite3](https://www.sqlite.org/index.html) - Gitpod provided database
+* [PostgreSQL](https://www.postgresql.org/) - database provided by Heroku for production
+
+
+### Libraries and frameworks
+
+* [Django3](https://www.djangoproject.com/) - a high-level Python Web framework that encourages rapid development
+* [Bootsrap4](https://getbootstrap.com/) - for layout and responsive design
+* [FontAwesome](https://fontawesome.com/) - icons implementation
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - a template language for python used to bring logic into templates
+* [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) - a library that enables python code to modify AWS service
+
+### Languages
+
+* HTML
+* CSS
+* Javascript
+* JQuery
+* Python 3.8
+
+## Testing
+
+For this app, testing was made manually and with validator services. During development I constantly used Chrome Developer Tools in order to ensure responsivness on all devices.
+During development, in settings.py, Django's debugger was set to:
+
+```python
+debug = False
+```
+
+This was so to ensure that when the app encounters an error, Django gives a detailed report of what happened and why the error occured.
+
+### Validators
+
+* [W3C HTML Validator](https://validator.w3.org/) - this tool checks the .html files validity
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - this tool checks the .css files validity
+* [Pep8 online](http://pep8online.com/) - this ensures that the python code is legit and does not contain formatting errors
 
 
 ## Technologies Used
@@ -195,6 +304,7 @@ With more time and knowledge, I would like to implement some additional features
     - The object storage service S3 was used to house the staic css and media files and provide scalability, security and performance to the site.
 - [**Font Awesome**](https://fontawesome.com/)
     - The project uses **Font Awesome** for the various icons in my app.
+
 ## Back-end Technologies
 - [**Python3**](https://python.org) 
     - Python can be easy to pick up whether you're a first time programmer or you're experienced with other languages.
@@ -215,6 +325,108 @@ With more time and knowledge, I would like to implement some additional features
 
 ### Testing User Stories
 
+### Manual testing
+
+Manual testing was done on a series of different screen devices and browsers as Chrome, Firefox, Edge, Safari , Opera and Mi Browser. I used different scenarios for each feature on every device. The deployed app was sent to friends and family to ensure I have covered enough devices and to get feedback from real life users about design, UX and functionality.
+
+### Testing Features
+
+#### Navbar
+
+* Navigation through the use of the branding Logo
+* Use all navbar links to ensure that they take the user to the correct location
+* Check that tha approiate navbar links are presented based on whether a user is logged in or not.
+* Check that the product manamgenet link is present when the superuser is logged in.
+
+#### Search bar
+
+* Type in search terms that relate the the products, their description and similar terms, check whether they return the correct products
+* Check that typing in other terms return no results and that that message displays for error feedback
+* Make a search without an input. See if your receive an error and you get redirected to the products page
+
+#### Home Page
+
+* check responsiveness for the text and call to action buttons on the page
+* Check both links to ensure they take users to the correct location
+* On successful sign / registration athe user is redirected back here and a success message toast is presented
+
+
+#### Products Page
+
+* Check that when landing on the products page for the first time, that all products are presented and the additional navigation system for those products is available
+* Ensure the responsiveness of the cards reacts as the page scales up and down between the breakpoints
+* Hover over an image and see that it scales up to preview the image better
+* Click the image to go to the products details page
+* Click the back to top button to see that it works and that th ecustom javascript smoothscrolling is working
+* Click on the filter dropdown box and check that the orderby of the prodcuts matches the filters
+* Use the prodcuts navigation system to check that the products 
+
+
+#### Product details
+
+* Check responsiveness of product details display on different screens
+* choose a quantity and click add to cart. See if a success message appears that contains the product selected, total price, delivery and button to go for checkout
+* Type a bigger than 99 or smaller than 1 quantity. Check for error message
+* Try remove 1 unit as default quantity. Click add to bag. See if you get an error message
+* Check if a user that is not logged in can write a review
+* Check if a logged in user can write a review
+* check to see if the comments are displayed correctly: username, date, star rating, subject
+* introduce different star ratings. Check if the star rating selected is displayed correct. 
+
+
+#### Bag page
+
+* Select the shopping cart from the main nav and see if the user is redirected to the bag
+* Select the toast cart afer adding a product to your bag, and see if you can go to the bag page 
+* Ensure the accuracy of selected products and quantities
+* Type a bigger than 99 or smaller than 1 quantity. Check for error message
+* Try remove 1 unit as default quantity. Click add to bag. See if you get an error message
+* Click the increment and decrement buttons and click update. See if the updated quantity is the one selected
+* Click remove and see if the product is removed from the bag
+* Remove all products and see if the back is empty
+* Check if the total price, delivery and grand total are calculated correct
+
+#### Checkout page
+
+* Check if a non logged in user can access the checkout page
+* When a logged in user, click on secure checkout button and see if you are redirected to checkout page
+* Check if the order summary is displayed with the selected products. On mobile, see if the order summary is hidden
+* As a user not logged in see if the delivery information form fields are empty
+* As a logged in user see if the delivery information fields are prepopulated with your details provided in your profile
+
+#### Payment
+
+For payments testing the following details should be use:
+
+* Card number: 4242 4242 4242 4242
+* CVC: any 3 digits
+* Date: any future date
+* ZIP Code: any 5 digits
+
+Try the following scenarios:
+
+* Type a wrong card number
+* Try required fields on delivery details form
+
+#### Checkout success
+
+* Redirected to the checkout success page?
+* Click link to return to shopping products
+* Review the order history page
+
+#### Profile page
+
+* Profile link is not present to non logged in users
+* Check if previous order histroy is listed and availbe to be reviewed
+* Update your delivery details and click the button
+* Check for required error with the delivery details update form
+
+#### Contact page
+
+* Click the email address in the contact us section and see if the mailto is working
+* Try send a message
+* After submission the users provided name is displayed on the form
+
 
 ### Responsive and Functional Testing
 
@@ -226,7 +438,6 @@ In addition to my own testing, I also asked family members, friends and the Slac
 ### Code Validation
 
 - I used the [W3C HTML Validator tool](https://validator.w3.org/#validate_by_input) to validate my HTML code.
-    - The W3C Validator tool doesn't recognise the Jinja templating, which has resulted in it showing a lot of errors in relation to the Jinja code. However, all other code is validating fine.
 - I used the [W3C CSS Validator tool](https://jigsaw.w3.org/css-validator/#validate_by_input) to validate my CSS code.
 - I used the [Pep8 Online tool](http://pep8online.com/) to validate my Python syntax.
 
@@ -235,46 +446,139 @@ In addition to my own testing, I also asked family members, friends and the Slac
 
 ## Deployment
 
-I used GitHub for my version control and Heroku to host the live version of my project. To deploy my website to Heroku, I used the following steps:
+This application can run locally or deployed to a live environment
 
-1. Created the app in Heroku.
-2. Went to the **Resources** tab in Heroku and searched for **Heroku Postgres** in the 'Add-Ons' section.
-3. Selected the free **Hobby** level.
-4. Updated the `.bashrc` file within my local workspace with the `DATABASE_URL` details, and the `settings.py` to connect to the database using the `dj_database_url` package.
-5. Ran the `python3 manage.py makemigrations`, `python3 manage.py migrate`, `python3 manage.py createsuperuser` commands to migrate the models into Heroku Postgres and create a new super user in the new PostgreSQL database.
-5. Went to the **Settings** tab in Heroku and clicked on the **Reveal Config Vars** button.
-6. Copied and pasted all of the `.bashrc` default variables in Heroku's Config Vars section.
-7. Went to the **Deploy** tab in Heroku, connected my app to my GitHub repository and selected **Enable Automatic Deployment** as the deployment method.
-8. Went to the **Developers** section in Stripe and clicked on **API Keys**.
-9. Copied and pasted the **Publishable Key** and **Secret Key** and set them as the `STRIPE_PUBLISHABLE` and `STRIPE_SECRET` environment variables in the `.bashrc` file within my local workspace.
-10. Updated the `settings.py` with the new Stripe environment variables.
+### Local Deployment
 
-15. Created a `custom_storages.py` file with classes to route to the relevant location settings for static and media files.
-16. Updated the `settings.py` file with the relevant configuration for static and media file storage.
-17. Ran the `python3 manage.py collectstatic` command to push the static files to my S3 bucket.
-18. Created a requirements.txt file using the following command in the terminal window:
+This example provides a step by step guide to deploying the site locally through Github Respository and Gitpod IDE
 
-    ```sudo pip3 freeze --local > requirements.txt```
+1. Navigate to the GitHub Repository: 
 
-19. Created a Procfile using the following command in the terminal window:
+[myFit GitHub Repository](https://github.com/Pysched/Dm-MyFit)
 
-    ```echo web: gunicorn myFit.wsgi:application > Procfile```
+1. Set up a virtual environment via this command in the terminal session:
 
-20. Ran the `git add .`, `git commit -m "<commit-message>"` and `git push` commands to push all changes to my GitHub repository.
+    ```python
+    python3 -m venv env
+    ```
 
-The app was successfully deployed to Heroku at this stage.
+1. Activate the .venv with the command:
 
-### Live App Link
+    ```python
+    \env\Scripts\activate.bat
+    ```
 
-Click the link below to run my project in the live environment:
+1. Install all required modules with the command:
 
-[myFit](https://github.com/Pysched/MS4-myFit-DM)
+    ```python
+    pip3 install -r requirements.txt
+    ```
 
-### Repository Link
+1. Create a env.py file and add it to your .gitignore
 
-Click the link below to visit my project's GitHub repository:
+1. Copy the following into the env.py file:
 
-[myFit GitHub Repository](https://github.com/Pysched/MS4-myFit-DM)
+    ```python
+    import os
+
+    os.environ['SECRET_KEY'] = 'User Defined value'
+    os.environ['DATABASE_URL'] = 'User Defined value'
+    os.environ['STRIPE_PUBLIC_KEY'] = 'User Defined value'
+    os.environ['STRIPE_SECRET_KEY'] = 'User Defined value'
+    os.environ['STRIPE_WH_SECRET'] = 'User Defined value'
+    os.environ['AWS_ACCESS_KEY_ID'] = 'User Defined value'
+    os.environ['AWS_SECRET_ACCESS_KEY'] = 'User Defined value'
+    os.environ['DEVELOPMENT'] = '1'
+    ```
+
+1. Set up the databases by running the following management command in your terminal:
+
+    ```python
+    python3 manage,py makemigrations
+    python3 manage.py migrate
+    ```
+
+1. Create the superuser to enable access to the django admin:
+
+    ```python
+    python3 manage.py createsuperuser
+    ```
+
+1. Start your server by running the following command in your terminal:
+
+    ```python
+    python3 manage.py runserver
+    ```
+
+### Heroku Deployment
+
+1. Create and account or login to Heroku 
+
+2. Create a new app, specifying a unique app name and global region
+
+3. Provision a Postgre database through selecting the resources tab and selecting the Free tier option.
+
+4. In Reveal Vars - Add the values from your settings.py file to heroku:
+
+    ```python
+    AWS_ACCESS_KEY_ID = User defined value
+    AWS_SECRET_ACCESS_KEY = User defined value
+    DATABASE_URL = User defined value
+    EMAIL_HOST_PASS = User defined value
+    EMAIL_HOST_USER = User defined value
+    SECRET_KEY = User defined value
+    STRIPE_PUBLIC_KEY = User defined value
+    STRIPE_SECRET_KEY = User defined value
+    STRIPE_WH_SECRET = User defined value
+    USE_AWS - True
+    ```
+
+5. Migrate the database tables with the following command:
+
+    ```python
+    python3 manage.py migrate
+    ```
+
+6. In order to have access to the admin, create an admin account with the following command:
+
+    ```python
+    python3 manage.py createsuperuser
+    ```
+
+7. Load the json data into the database, ensuring to load the categories first so that the products know where they are going:
+
+    ```python
+    python3 manage.py loaddata categories.json
+    python3 manage.py loaddata products.json
+    ```
+
+8. Save all the django/python/allauth, gunicorn, boto3 etc.. packages requirements:
+
+    ```python
+    pip3 freeze > requirements.txt
+    ```
+
+9. Create Procfile:
+
+    ```python
+    echo web: gunicorn myfit.wsgi:application > Procfile
+    ```
+
+10. Add the files and push them to Github:
+
+    ```python
+    git add .
+    git commit -m text description
+    git push
+    ```
+
+11. Deploy branch in Heroku
+
+12. In settings.py add ['myfit.herokuapp.com', 'localhost'] to Allowed Hosts
+
+
+
+
 
 ### Running Code Locally
 
