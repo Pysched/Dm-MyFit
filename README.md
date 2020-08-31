@@ -5,12 +5,10 @@ Milestone Project Four
 ## Table of Contents
 
 - [**About**](#About)
-  - [Why This Project?](#Why-This-Project)
 - [**UX**](#UX)
   - [User Stories](#User-Stories)
   - [Style Rationale](#Style-Rationale)
   - [Wireframes](#Wireframes)
-  - [Database Schema](#Database-Schema)
 - [**Features**](#Features)
   - [Functionality](#Functionality)
   - [Existing Features](#Existing-Features)
@@ -49,6 +47,14 @@ Users also recieve an email to their own email address from the site informing t
 
 Further engagment with site includes the signing up process whereby user have to check a verification link, sent to the email they provide, in order to access site functionality.
 
+Further features where planned initially for this project. Those included a membership system that reuired the user to sign up various packages and have access to excerices and tutorial videos. Extensive amounts of time where put into it, however I was unable to get it to work properly and to my sheer disappointment, a versioning issue at the last hurdle required me to remove it from the final submission. 
+
+There should be large elemts of both memberhip apps and course apps in the commit history.
+
+Nonetheless the amount of knowledge, techniques that I learnt in this project cannot be understated. Thereis quite a large amount of work involved in developing a django site, combined with learning python syntax and methodologies. 
+
+I thoroughly enjoyed my time developing this project, and will be adding finishing touches and flourishes to it after it has been submitted and marked and is safe to do so in my own time.
+
 The deployed site can be viewed at: https://myfit.herokuapp.com/ 
 
 To make test payments please use the following details to ensure success:
@@ -72,6 +78,7 @@ Authentication of payments and user login are a core element of the site. as the
 
 Further details are required to make purchases, with previous purchases detail available within the user profile seciton for users to review their buying history.
 
+
 ### User Stories
 
 The site plan and general development was devised together with user stories. These stories aided in the development of the functionality of the site, as they focused me, the developer to focus on the key task required to make the site functional from the perspective of the user.
@@ -85,7 +92,7 @@ The site plan and general development was devised together with user stories. Th
 - To filter my searches by price, rating, alphabet, category and brand
 - To type a search for a product and to see results
 - To get feedback from the system I am using so I know what I'm doing what I have does
-- I select items by quantity and size
+- To select, review and purchase items by quantity and size
 - To have product details available to me to help me make my decisions
 - To view a list of all products
 - To have a shopping cart that holds my current selection
@@ -104,28 +111,64 @@ The site plan and general development was devised together with user stories. Th
 - to have customers leave feedback on products based on their expereinces
 
 ### Style Rationale
+The site was designed in a way that would be visually appealing and eye catching for important places, signs and interactions. This was done through the choice of colour pallete, call to action buttons, font and layout. 
 
+#### Fonts
+The font used for the is site was Seoige. This was chosen as it is a clear font, easy to read and not abrasive on the eyes.
 
+#### Colours
+* ![#0c82f1]'#0c82f1' Was used as a strong primary colour to draw attent to branding, buttons, borders and elements
+* ![#343a40] '#343a40' Was used as a contrasting dark gray colour to balance the strong blue used in the site. Combined these clours give a modern impression for the site.
+* ![#rgb(12, 130, 241)] 'rgb(12, 130, 241)' was used as a softer blue contract for on hover states 
+
+- Bootstrap helper colours where used to illustrate the rest of the site
 
 
 ### Wireframes
 
 
-### Database Schema
-
 
 ## Features
 
 ### Functionality
-
+* The abillity to sign up through a username, email and password combination to ensure individual access to the site and profile features
+* 
 
 ### Existing Features
+
+#### Header and Navigation System
+* Main branding logo that is visable on all screen sizes that acts as a home button aswell.
+* Search bar, for searching of products and search terms. This feature is available on all screen sizes
+* Shopping bag icon with a live update of the cost of goods currently in a users bag
+
+#### Homepage
+* Main image illustrates the theme and mood of the site, that of excerices related content
+* Links to the shop and to sign up are stringly positioned to draw the users eye to those first point of call sections
+
+
+#### Contact Us
+* The contact us page is a place where users and custoemr with any issues can contact the site owners to provided a subject title, user name and message.
+* A confirmation message informs the user that they have performed an action by sending a message to the site.
+
+#### Products page
+* The products Page contains 251 products, that are presented in total upon landing on the page
+* Each product when hovered over has a scale css element attached to it, to provide the user with a closer look at t he image
+* Each product is arranged within a card element, thathas the products 
 
 
 
 ### Features Left to Implement
 
+
+### Future Implement
+
 With more time and knowledge, I would like to implement some additional features to the app:
+
+* A tiered membership system that spans 3 levels. At each level a customer would gain access to additional contain and value for their subscriptions
+
+* A courses app, that would have  numerours excerices training routines embedded within it, that could be accessed depending on the customers membership level
+
+* A blog app, that would encourage fellow users to discuss excercise realted activties, routines food plans and how they are progressing through various activities
 
 
 ## Technologies Used
@@ -279,7 +322,12 @@ The images used in this site are used for educational purposes only and no attem
 All credit goes to those referenced in the urls.
 
 ### Acknowledgements
-Inspiration for the product review system was taken from a tutorial found here: https://www.youtube.com/watch?v=OvTs8BMLb7o
+Inspiration for the product review system was found from a tutorial found here: https://www.youtube.com/watch?v=OvTs8BMLb7o
+
+Inspiration for the contact form was found from a tutorial found at these tutorials: 
+https://www.youtube.com/watch?reload=9&v=w4ilq6Zk-08
+https://www.youtube.com/watch?v=xNqnHmXIuzU&frags=pl%2Cwn
+
 
 The shopping system, checkout, shopping bag, and general framework for the site was developed out of the learning material provided by Code insitute tutorials, and customised to suit the project. 
 
