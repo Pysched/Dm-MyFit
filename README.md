@@ -2,38 +2,6 @@
 
 Milestone Project Four
 
-## Table of Contents
-
-- [**About**](#About)
-- [**UX**](#UX)
-  - [User Stories](#User-Stories)
-  - [Style Rationale](#Style-Rationale)
-  - [Wireframes](#Wireframes)
-- [**Features**](#Features)
-  - [Functionality](#Functionality)
-  - [Existing Features](#Existing-Features)
-  - [Features Left To Implement](#Features-Left-To-Implement)
-- [**Technologies Used**](#Technologies-Used)
-  - [Version Control](#Version-Control)
-  - [Hosting](#Hosting)
-- [**Testing**](#Testing)
-  - [Testing User Stories](#Testing-User-Stories)
-  - [Responsive and Functional Testing](#Responsive-and-Functional-Testing)
-  - [Additional Testing](#Additional-Testing)
-  - [Code Validation](#Code-Validation)
-  - [Automated Testing](#Automated-Testing)
-  - [Bugs / Problems](#Bugs-/-Problems)
-- [**Deployment**](#Deployment)
-  - [Live App Link](#Live-App-Link)
-  - [Repository Link](#Repository-Link)
-  - [Running Code Locally](#Running-Code-Locally)
-  - [Media And Static Folders](#Media-And-Static-Folders)
-- [**Credits**](#Credits)
-  - [Content](#Content)
-  - [Media](#Media)
-  - [Acknowledgements](#Acknowledgements)
-  - [Disclaimer](#Disclaimer)
-
 
 ### Live App Link
 
@@ -144,10 +112,6 @@ The font used for the is site was Seoige. This was chosen as it is a clear font,
 
 ## Features
 
-### Functionality
-* The abillity to sign up through a username, email and password combination to ensure individual access to the site and profile features
-* 
-
 ### Existing Features
 
 #### Header and Navigation System
@@ -220,10 +184,7 @@ The font used for the is site was Seoige. This was chosen as it is a clear font,
 * Copyright logo
 
 
-### Features Left to Implement
-
-
-### Future Implement
+### Features Left to Implement / Future Implement
 
 With more time and knowledge, I would like to implement some additional features to the app:
 
@@ -262,7 +223,7 @@ With more time and knowledge, I would like to implement some additional features
 * JQuery
 * Python 3.8
 
-## Testing
+## Development Debugging
 
 For this app, testing was made manually and with validator services. During development I constantly used Chrome Developer Tools in order to ensure responsivness on all devices.
 During development, in settings.py, Django's debugger was set to:
@@ -323,13 +284,9 @@ This was so to ensure that when the app encounters an error, Django gives a deta
 
 ## Testing
 
-### Testing User Stories
+### Testing Features and User Stories 
 
-### Manual testing
-
-Manual testing was done on a series of different screen devices and browsers as Chrome, Firefox, Edge, Safari , Opera and Mi Browser. I used different scenarios for each feature on every device. The deployed app was sent to friends and family to ensure I have covered enough devices and to get feedback from real life users about design, UX and functionality.
-
-### Testing Features
+Responsiveness and interactions where tested by myself throught he following steps:
 
 #### Navbar
 
@@ -428,9 +385,6 @@ Try the following scenarios:
 * After submission the users provided name is displayed on the form
 
 
-### Responsive and Functional Testing
-
-
 ### Additional Testing
 
 In addition to my own testing, I also asked family members, friends and the Slack community to test my app and provide any feedback.
@@ -442,6 +396,12 @@ In addition to my own testing, I also asked family members, friends and the Slac
 - I used the [Pep8 Online tool](http://pep8online.com/) to validate my Python syntax.
 
 ### Bugs / Problems
+
+* The styling of the navbar area requires more tweaking to along properly
+* The contact us form email logic was implemeted elsewhere in the site, but due to time constrants was unable to be finished working
+* The bag toast sometimes appears when other messages are triggered
+* Several styling issues on pages to be resolved
+* The name attribute displayed on the contact form page after submisson has the parenthesis and quoates with it, these show havea  function to remove them
 
 
 ## Deployment
@@ -626,6 +586,7 @@ The images used in this site are used for educational purposes only and no attem
 All credit goes to those referenced in the urls.
 
 ### Acknowledgements
+
 Inspiration for the product review system was found from a tutorial found here: https://www.youtube.com/watch?v=OvTs8BMLb7o
 
 Inspiration for the contact form was found from a tutorial found at these tutorials: 
@@ -635,7 +596,9 @@ https://www.youtube.com/watch?v=xNqnHmXIuzU&frags=pl%2Cwn
 
 The shopping system, checkout, shopping bag, and general framework for the site was developed out of the learning material provided by Code insitute tutorials, and customised to suit the project. 
 
-Inspiration for sevral elements of the site and inspiration of carrying on after too many hours of banging my hand against a keyboard was taken from fellow students in the slack community, and also being able to review other students work and see how they got on and how they implemented there systems.
+Inspiration for several elements of the site and inspiration of carrying on after too many hours of banging my hand against a keyboard was taken from fellow students in the slack community. and also being able to review other students work and see how they got on with there implementation of systems was a great aid to me endeavors.
+
+
 
 ### Disclaimer
 
